@@ -1,5 +1,5 @@
 import React from "react";
-import type { Rates } from "pages/GameListPage/types";
+import type { Rates } from "types/types";
 import "./styles.css";
 import { getPriceUsingExchangeRate } from "./helper_functions/getPriceUsingExchangeRate";
 import { formatValueToCurrency } from "./helper_functions/formatValueToCurrency";

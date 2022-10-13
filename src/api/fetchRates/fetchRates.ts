@@ -1,5 +1,5 @@
 import { Dispatch, SetStateAction } from "react";
-import type { Rates } from "pages/GameListPage/types";
+import type { Rates } from "types/types";
 
 interface fetchRatesInterface {
   setStateFunction: Dispatch<SetStateAction<Rates | null>>;

@@ -1,4 +1,4 @@
-import React, { memo, useState, useEffect } from "react";
+import React, { memo, useContext } from "react";
 
 import GameListCardWrapper from "components/GameDetailsCard/components/GameDetailsCardWrapper/GameDetailsCardWrapper";
 import AddToBasketButton from "components/GameDetailsCard/components/AddToBasketButton/AddToBasketButton";
@@ -8,33 +8,16 @@ import Quantity from "components/GameDetailsCard/components/Quantity/Quantity";
 import Rating from "components/GameDetailsCard/components/Rating/Rating";
 import Tags from "components/GameDetailsCard/components/Tags/Tags";
 import Layout from "../../components/Layout/Layout";
-import type { Game, Rates } from "./types";
-import { fetchRates } from "api/fetchRates/fetchRates";
-import { fetchGames } from "api/fetchGames/fetchGames";
+import StoreContext from "contexts/StoreContext";
 
 const GameListPage = memo(() => {
-  const [games, setGames] = useState<Game[]>([]);
-  const [rates, setRates] = useState<Rates | null>(null);
-
-  useEffect(() => {
-    const controller = new AbortController();
-    const signal = controller.signal;
-
-    fetchGames({ setStateFunction: setGames, signal });
-    fetchRates({ setStateFunction: setRates, signal });
-
-    return () => {
-      controller.abort();
-    };
-  }, []);
-
-  const selectedCurrency = "USD";
+  const storeContextObject = useContext(StoreContext);
 
   return (
     <Layout title="Games">
-      {games &&
-        games.length > 0 &&
-        games.map(
+      {storeContextObject?.storeGames &&
+        storeContextObject.storeGames.length > 0 &&
+        storeContextObject.storeGames.map(
           ({
             artworkUrl,
             releaseDate,
@@ -59,8 +42,8 @@ const GameListPage = memo(() => {
                 <Quantity value={quantity} onChange={() => {}} />
                 <Price
                   value={price}
-                  exchangeRates={rates}
-                  selectedCurrency={selectedCurrency}
+                  exchangeRates={storeContextObject?.currencyExchangeRates}
+                  selectedCurrency={storeContextObject?.selectedCurrency}
                 />
                 <AddToBasketButton isAdded={inCart} onClick={() => {}} />
               </GameListCardWrapper>

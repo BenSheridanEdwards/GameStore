@@ -2,6 +2,7 @@ import { render, waitFor } from "@testing-library/react";
 import GameListPage from "./GameListPage";
 import React from "react";
 import { makeServer } from "../../mock/server";
+import { StoreProvider } from "contexts/StoreContext";
 
 describe("GameListPage", () => {
   let server: any;
@@ -14,11 +15,21 @@ describe("GameListPage", () => {
   });
 
   it("Renders without error", () => {
-    expect(render(<GameListPage />)).not.toBeNull();
+    expect(
+      render(
+        <StoreProvider>
+          <GameListPage />
+        </StoreProvider>
+      )
+    ).not.toBeNull();
   });
 
   it("renders all the game detail card labels correctly", async () => {
-    const { queryAllByText } = render(<GameListPage />);
+    const { queryAllByText } = render(
+      <StoreProvider>
+        <GameListPage />
+      </StoreProvider>
+    );
 
     await waitFor(() => {
       expect(queryAllByText("Released", { exact: false })).not.toBe([]);
@@ -29,7 +40,11 @@ describe("GameListPage", () => {
   });
 
   it("renders all the game detail card data correctly", async () => {
-    const { getByText } = render(<GameListPage />);
+    const { getByText } = render(
+      <StoreProvider>
+        <GameListPage />
+      </StoreProvider>
+    );
 
     await waitFor(() => {
       expect(getByText("FINALFANTASY XV POCKET EDITION")).toBeInTheDocument();
