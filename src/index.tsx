@@ -1,9 +1,9 @@
-import ReactDOM from "react-dom";
 import React from "react";
+import ReactDOM from "react-dom";
 import GameListPage from "./pages/GameListPage/GameListPage";
 import CheckoutPage from "./pages/CheckoutPage/CheckoutPage";
+import { makeServer } from "mock/server";
 import "fontsource-roboto";
-import "./mock/server";
 import "./index.css";
 
 import {
@@ -12,6 +12,8 @@ import {
   Route,
   Redirect,
 } from "react-router-dom";
+
+makeServer();
 
 ReactDOM.render(
   <React.StrictMode>
