@@ -1,0 +1,62 @@
+.AppBar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 80px;
+  display: flex;
+  background-color: #101320;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 38px;
+}
+
+.AppBar__TitleContainer {
+  display: flex;
+  flex-direction: column;
+}
+
+.AppBar__Title {
+  font-size: 24px;
+  font-weight: bold;
+  line-height: 32px;
+}
+
+.AppBar__ActionsContainer {
+  display: flex;
+  align-items: center;
+}
+
+.AppBar__Actions__Item {
+  padding-left: 32px;
+}
+
+.AppBar__BackButton__label {
+  color: #14f0af;
+  display: flex;
+  align-items: center;
+  font-size: 14px;
+  line-height: 18px;
+  cursor: pointer;
+}
+
+.AppBar__BackButton__Icon {
+  padding-right: 4px;
+}
+
+.AppBar__CartIconContainer {
+  position: relative;
+}
+
+.AppBar__CartItemsBadge {
+  position: absolute;
+  background: #14f0af;
+  width: 24px;
+  height: 24px;
+  color: black;
+  line-height: 24px;
+  border-radius: 12px;
+  top: -50%;
+  right: -50%;
+  font-weight: 700;
+}
