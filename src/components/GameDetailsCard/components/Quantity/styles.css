@@ -1,0 +1,9 @@
+.Quantity__Controls {
+  align-items: center;
+  display: flex;
+  margin-top: 8px;
+}
+
+.Quantity__Value {
+  margin: 0 12px;
+}
