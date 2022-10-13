@@ -1,0 +1,18 @@
+.Tags__List {
+  display: flex;
+  list-style-type: none;
+  margin-top: 8px;
+}
+
+.Tags__Tag {
+  background-color: #151829;
+  border-radius: 14px;
+  color: #878ca8;
+  font-size: 14px;
+  padding: 4px 8px;
+  width: max-content;
+}
+
+.Tags__Tag:nth-child(n + 2) {
+  margin-left: 4px;
+}

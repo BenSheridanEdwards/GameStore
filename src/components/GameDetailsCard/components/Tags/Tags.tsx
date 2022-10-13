@@ -1,4 +1,5 @@
 import React from "react";
+import "./styles.css";
 
 type TagsProps = {
   tags: string[];
@@ -7,16 +8,16 @@ type TagsProps = {
 const Tags = ({ tags }: TagsProps) => {
   return (
     <div className="Tags">
-      <div className="Tags__Label">Tags</div>
-      <div>
+      <label>Tags</label>
+      <ul className="Tags__List">
         {tags.slice(0, 3).map((tag) => {
           return (
-            <div className="Tags__Tag" key={tag}>
+            <li className="Tags__Tag" key={tag}>
               {tag}
-            </div>
+            </li>
           );
         })}
-      </div>
+      </ul>
     </div>
   );
 };
