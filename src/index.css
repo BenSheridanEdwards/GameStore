@@ -9,3 +9,13 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
     monospace;
 }
+
+label {
+  font-size: 14px;
+  color: #13f0af;
+}
+
+ul {
+  padding-inline-start: 0;
+  margin: 0;
+}
