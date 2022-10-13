@@ -1,27 +1,35 @@
-import React, { memo, FC, ReactNode } from "react";
+import React, { memo, ReactNode } from "react";
 import clsx from "clsx";
 import "./styles.css";
 
-const Button: FC<{
+interface ButtonProps {
   onClick: () => void;
-  variant?: "link" | "secondary" | "primary";
+  variant?: "link" | "secondary" | "primary" | "icon";
   fullWidth?: boolean;
   icon?: ReactNode;
   children?: ReactNode;
-}> = ({ children, onClick, variant, icon, fullWidth }) => {
+}
+
+const Button = ({
+  children,
+  onClick,
+  variant,
+  icon,
+  fullWidth,
+}: ButtonProps) => {
   const className = clsx({
     Button: true,
     "Button--link": variant === "link",
     "Button--secondary": variant === "secondary",
     "Button--primary": variant === "primary",
+    "Button--icon": variant === "icon",
     "Button--fullWidth": fullWidth,
   });
 
   return (
     <button className={className} onClick={onClick}>
       {!!icon && <div className="Button__Icon">{icon}</div>}
-
-      {children}
+      {children && <span className="Button__Text">{children}</span>}
     </button>
   );
 };
