@@ -28,6 +28,8 @@ const GameListPage = memo(() => {
     };
   }, []);
 
+  const selectedCurrency = "USD";
+
   return (
     <Layout title="Games">
       {games &&
@@ -55,7 +57,11 @@ const GameListPage = memo(() => {
                 <Rating value={rating} />
                 <Tags tags={tags} />
                 <Quantity value={quantity} onChange={() => {}} />
-                <Price value={price} />
+                <Price
+                  value={price}
+                  exchangeRates={rates}
+                  selectedCurrency={selectedCurrency}
+                />
                 <AddToBasketButton isAdded={inCart} onClick={() => {}} />
               </GameListCardWrapper>
             );
