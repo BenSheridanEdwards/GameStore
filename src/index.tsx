@@ -4,6 +4,7 @@ import GameListPage from "./pages/GameListPage/GameListPage";
 import CheckoutPage from "./pages/CheckoutPage/CheckoutPage";
 import { makeServer } from "mock/server";
 import { StoreProvider } from "./contexts/StoreContext";
+import { CurrencyProvider } from "contexts/CurrencyContext";
 import "fontsource-roboto";
 import "./index.css";
 
@@ -21,15 +22,17 @@ ReactDOM.render(
     <Router>
       <Switch>
         <StoreProvider>
-          <Route path="/list">
-            <GameListPage />
-          </Route>
+          <CurrencyProvider>
+            <Route path="/list">
+              <GameListPage />
+            </Route>
 
-          <Route path="/checkout">
-            <CheckoutPage />
-          </Route>
+            <Route path="/checkout">
+              <CheckoutPage />
+            </Route>
 
-          <Redirect from="*" to="/list" />
+            <Redirect from="*" to="/list" />
+          </CurrencyProvider>
         </StoreProvider>
       </Switch>
     </Router>
