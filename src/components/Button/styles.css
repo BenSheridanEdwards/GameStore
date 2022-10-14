@@ -10,9 +10,11 @@
   display: flex;
   font-size: 14px;
   height: fit-content;
+  justify-content: center;
   line-height: 18px;
   max-width: fit-content;
   min-height: 40px;
+  min-width: fit-content;
   outline: none;
   padding: 8px 16px;
   text-transform: uppercase;
@@ -25,10 +27,12 @@
 .Button--link {
   background-color: transparent;
   color: #14f0af;
+  text-transform: none;
 }
 
 .Button--secondary {
-  color: #14f0af;
+  background-color: #303550;
+  color: #f5f5f5;
 }
 
 .Button--icon {
@@ -50,7 +54,6 @@
 }
 
 .Button--fullWidth {
-  justify-content: center;
   width: 100%;
 }
 

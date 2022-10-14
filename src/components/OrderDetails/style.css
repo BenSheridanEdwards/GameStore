@@ -1,0 +1,19 @@
+.OrderDetails {
+  width: 100%;
+}
+
+.OrderDetails__OrderValue,
+.OrderDetails__OrderSize {
+  display: flex;
+  font-size: 24px;
+  justify-content: space-between;
+  width: 100%;
+}
+
+.OrderDetails__OrderValue {
+  font-weight: bold;
+}
+
+.OrderDetails__OrderSize {
+  margin-top: 24px;
+}
