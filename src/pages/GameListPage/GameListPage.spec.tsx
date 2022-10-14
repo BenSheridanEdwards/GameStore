@@ -3,6 +3,7 @@ import GameListPage from "./GameListPage";
 import React from "react";
 import { makeServer } from "../../mock/server";
 import { StoreProvider } from "contexts/StoreContext";
+import { CurrencyProvider } from "contexts/CurrencyContext";
 
 describe("GameListPage", () => {
   let server: any;
@@ -18,7 +19,9 @@ describe("GameListPage", () => {
     expect(
       render(
         <StoreProvider>
-          <GameListPage />
+          <CurrencyProvider>
+            <GameListPage />
+          </CurrencyProvider>
         </StoreProvider>
       )
     ).not.toBeNull();
@@ -27,7 +30,9 @@ describe("GameListPage", () => {
   it("renders all the game detail card labels correctly", async () => {
     const { queryAllByText } = render(
       <StoreProvider>
-        <GameListPage />
+        <CurrencyProvider>
+          <GameListPage />
+        </CurrencyProvider>
       </StoreProvider>
     );
 
@@ -42,7 +47,9 @@ describe("GameListPage", () => {
   it("renders all the game detail card data correctly", async () => {
     const { getByText } = render(
       <StoreProvider>
-        <GameListPage />
+        <CurrencyProvider>
+          <GameListPage />
+        </CurrencyProvider>
       </StoreProvider>
     );
 
