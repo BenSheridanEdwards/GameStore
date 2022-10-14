@@ -9,7 +9,7 @@ export const games = [
     releaseDate: "2018-02-08",
     price: 2.1,
     quantity: 1,
-    inCart: false,
+    inBasket: false,
   },
   {
     id: "1287138671",
@@ -21,7 +21,7 @@ export const games = [
     releaseDate: "2018-01-24",
     price: 4.7,
     quantity: 1,
-    inCart: false,
+    inBasket: false,
   },
   {
     id: "1201642309",
@@ -33,7 +33,7 @@ export const games = [
     releaseDate: "2017-12-14",
     price: 5.7,
     quantity: 1,
-    inCart: false,
+    inBasket: false,
   },
   {
     id: "1209489068",
@@ -45,7 +45,7 @@ export const games = [
     releaseDate: "2017-12-13",
     price: 21.3,
     quantity: 1,
-    inCart: false,
+    inBasket: false,
   },
   {
     id: "1269225754",
@@ -57,7 +57,7 @@ export const games = [
     releaseDate: "2017-12-14",
     price: 19.9,
     quantity: 1,
-    inCart: false,
+    inBasket: false,
   },
   {
     id: "1180101534",
@@ -69,7 +69,7 @@ export const games = [
     releaseDate: "2017-12-14",
     price: 16.7,
     quantity: 1,
-    inCart: false,
+    inBasket: false,
   },
   {
     id: "1234617736",
@@ -81,7 +81,7 @@ export const games = [
     releaseDate: "2017-10-25",
     price: 8,
     quantity: 1,
-    inCart: false,
+    inBasket: false,
   },
   {
     id: "1033471974",
@@ -93,7 +93,7 @@ export const games = [
     releaseDate: "2017-09-17",
     price: 12.7,
     quantity: 1,
-    inCart: false,
+    inBasket: false,
   },
   {
     id: "1279174518",
@@ -105,7 +105,7 @@ export const games = [
     releaseDate: "2017-09-28",
     price: 10.9,
     quantity: 1,
-    inCart: false,
+    inBasket: false,
   },
   {
     id: "1230231705",
@@ -117,7 +117,7 @@ export const games = [
     releaseDate: "2017-09-21",
     price: 22.4,
     quantity: 1,
-    inCart: false,
+    inBasket: false,
   },
   {
     id: "1084019358",
@@ -129,7 +129,7 @@ export const games = [
     releaseDate: "2017-03-22",
     price: 12.9,
     quantity: 1,
-    inCart: false,
+    inBasket: false,
   },
   {
     id: "1187265767",
@@ -141,7 +141,7 @@ export const games = [
     releaseDate: "2017-05-30",
     price: 23.1,
     quantity: 1,
-    inCart: false,
+    inBasket: false,
   },
   {
     id: "1204902987",
@@ -153,7 +153,7 @@ export const games = [
     releaseDate: "2017-05-18",
     price: 23.1,
     quantity: 1,
-    inCart: false,
+    inBasket: false,
   },
   {
     id: "1109008423",
@@ -165,7 +165,7 @@ export const games = [
     releaseDate: "2017-05-09",
     price: 21.3,
     quantity: 1,
-    inCart: false,
+    inBasket: false,
   },
   {
     id: "1046450453",
@@ -177,7 +177,7 @@ export const games = [
     releaseDate: "2017-05-03",
     price: 14.4,
     quantity: 1,
-    inCart: false,
+    inBasket: false,
   },
   {
     id: "1002635492",
@@ -189,7 +189,7 @@ export const games = [
     releaseDate: "2017-04-05",
     price: 18.4,
     quantity: 1,
-    inCart: false,
+    inBasket: false,
   },
   {
     id: "1179177872",
@@ -201,7 +201,7 @@ export const games = [
     releaseDate: "2017-03-16",
     price: 22.3,
     quantity: 1,
-    inCart: false,
+    inBasket: false,
   },
   {
     id: "1193911528",
@@ -213,7 +213,7 @@ export const games = [
     releaseDate: "2017-03-09",
     price: 17.6,
     quantity: 1,
-    inCart: false,
+    inBasket: false,
   },
   {
     id: "1181212221",
@@ -225,7 +225,7 @@ export const games = [
     releaseDate: "2017-03-12",
     price: 21.1,
     quantity: 1,
-    inCart: false,
+    inBasket: false,
   },
   {
     id: "928945016",
@@ -237,7 +237,7 @@ export const games = [
     releaseDate: "2017-02-13",
     price: 12.1,
     quantity: 1,
-    inCart: false,
+    inBasket: false,
   },
   {
     id: "1107320261",
@@ -249,7 +249,7 @@ export const games = [
     releaseDate: "2017-01-26",
     price: 22.7,
     quantity: 1,
-    inCart: false,
+    inBasket: false,
   },
   {
     id: "1147297267",
@@ -261,7 +261,7 @@ export const games = [
     releaseDate: "2016-12-26",
     price: 19.6,
     quantity: 1,
-    inCart: false,
+    inBasket: false,
   },
   {
     id: "1145275343",
@@ -273,7 +273,7 @@ export const games = [
     releaseDate: "2016-09-07",
     price: 5,
     quantity: 1,
-    inCart: false,
+    inBasket: false,
   },
   {
     id: "911800950",
@@ -285,7 +285,7 @@ export const games = [
     releaseDate: "2016-12-07",
     price: 17.5,
     quantity: 1,
-    inCart: false,
+    inBasket: false,
   },
   {
     id: "1039848719",
@@ -297,7 +297,7 @@ export const games = [
     releaseDate: "2016-12-07",
     price: 24,
     quantity: 1,
-    inCart: false,
+    inBasket: false,
   },
   {
     id: "1117166919",
@@ -309,7 +309,7 @@ export const games = [
     releaseDate: "2016-11-10",
     price: 7.6,
     quantity: 1,
-    inCart: false,
+    inBasket: false,
   },
   {
     id: "1093396572",
@@ -321,7 +321,7 @@ export const games = [
     releaseDate: "2016-11-09",
     price: 23.7,
     quantity: 1,
-    inCart: false,
+    inBasket: false,
   },
   {
     id: "1147002179",
@@ -333,7 +333,7 @@ export const games = [
     releaseDate: "2016-11-02",
     price: 4.7,
     quantity: 1,
-    inCart: false,
+    inBasket: false,
   },
   {
     id: "971233157",
@@ -345,7 +345,7 @@ export const games = [
     releaseDate: "2016-11-02",
     price: 12.1,
     quantity: 1,
-    inCart: false,
+    inBasket: false,
   },
   {
     id: "1108417718",
@@ -357,7 +357,7 @@ export const games = [
     releaseDate: "2016-10-27",
     price: 6.2,
     quantity: 1,
-    inCart: false,
+    inBasket: false,
   },
   {
     id: "1000876192",
@@ -369,7 +369,7 @@ export const games = [
     releaseDate: "2016-10-18",
     price: 15.1,
     quantity: 1,
-    inCart: false,
+    inBasket: false,
   },
   {
     id: "1094930513",
@@ -381,7 +381,7 @@ export const games = [
     releaseDate: "2016-10-11",
     price: 9.3,
     quantity: 1,
-    inCart: false,
+    inBasket: false,
   },
   {
     id: "1107741196",
@@ -393,7 +393,7 @@ export const games = [
     releaseDate: "2016-09-28",
     price: 6.6,
     quantity: 1,
-    inCart: false,
+    inBasket: false,
   },
   {
     id: "1135127134",
@@ -405,7 +405,7 @@ export const games = [
     releaseDate: "2016-09-21",
     price: 11.3,
     quantity: 1,
-    inCart: false,
+    inBasket: false,
   },
   {
     id: "1085348419",
@@ -417,7 +417,7 @@ export const games = [
     releaseDate: "2016-09-14",
     price: 22.3,
     quantity: 1,
-    inCart: false,
+    inBasket: false,
   },
   {
     id: "1121782467",
@@ -429,7 +429,7 @@ export const games = [
     releaseDate: "2016-09-01",
     price: 22.3,
     quantity: 1,
-    inCart: false,
+    inBasket: false,
   },
   {
     id: "1090577736",
@@ -441,7 +441,7 @@ export const games = [
     releaseDate: "2016-08-19",
     price: 22.3,
     quantity: 1,
-    inCart: false,
+    inBasket: false,
   },
   {
     id: "1020481008",
@@ -453,7 +453,7 @@ export const games = [
     releaseDate: "2016-08-18",
     price: 16.7,
     quantity: 1,
-    inCart: false,
+    inBasket: false,
   },
   {
     id: "1114127463",
@@ -465,7 +465,7 @@ export const games = [
     releaseDate: "2016-08-12",
     price: 13.4,
     quantity: 1,
-    inCart: false,
+    inBasket: false,
   },
   {
     id: "972657175",
@@ -477,7 +477,7 @@ export const games = [
     releaseDate: "2016-07-28",
     price: 1.6,
     quantity: 1,
-    inCart: false,
+    inBasket: false,
   },
   {
     id: "1105390093",
@@ -489,7 +489,7 @@ export const games = [
     releaseDate: "2016-07-13",
     price: 5.9,
     quantity: 1,
-    inCart: false,
+    inBasket: false,
   },
   {
     id: "1065127755",
@@ -501,7 +501,7 @@ export const games = [
     releaseDate: "2016-06-02",
     price: 14.1,
     quantity: 1,
-    inCart: false,
+    inBasket: false,
   },
   {
     id: "1005098334",
@@ -513,6 +513,6 @@ export const games = [
     releaseDate: "2016-06-01",
     price: 12.5,
     quantity: 1,
-    inCart: false,
+    inBasket: false,
   },
 ];
