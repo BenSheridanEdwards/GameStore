@@ -14,6 +14,7 @@
 .AppBar__TitleContainer {
   display: flex;
   flex-direction: column;
+  width: 240px;
 }
 
 .AppBar__Title {
@@ -28,10 +29,10 @@
 }
 
 .AppBar__Actions__Item {
-  padding-left: 32px;
+  margin-left: 60px;
 }
 
-.AppBar__BackButton__label {
+.AppBar__BackButton__Label {
   color: #14f0af;
   display: flex;
   align-items: center;
@@ -44,11 +45,11 @@
   padding-right: 4px;
 }
 
-.AppBar__CartIconContainer {
+.AppBar__BasketIconContainer {
   position: relative;
 }
 
-.AppBar__CartItemsBadge {
+.AppBar__BasketItemsBadge {
   position: absolute;
   background: #14f0af;
   width: 24px;

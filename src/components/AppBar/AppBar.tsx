@@ -2,7 +2,7 @@ import Select from "./../Select/Select";
 import React, { memo, useContext, useState } from "react";
 import Button from "./../Button/Button";
 import { useHistory } from "react-router-dom";
-import { ReactComponent as Basket } from "./../../assets/icons/cart.svg";
+import { ReactComponent as Basket } from "./../../assets/icons/basket.svg";
 import { ReactComponent as ArrowBack } from "./../../assets/icons/arrow-back.svg";
 import "./styles.css";
 import StoreContext from "contexts/StoreContext";
@@ -33,25 +33,23 @@ const AppBar = memo(({ title, backButton }: AppBarProps) => {
         <div className="AppBar__Title">{title}</div>
 
         {!!backButton && (
-          <div
-            className="AppBar__BackButton__Label"
+          <Button
+            variant="link"
+            icon={<ArrowBack />}
             onClick={backButton.onClick}
           >
-            <ArrowBack className="AppBar__BackButton__Icon" />
-
             {backButton.text}
-          </div>
+          </Button>
         )}
       </div>
 
       <div className="AppBar__ActionsContainer">
-        <div className="AppBar__Actions_Item">
+        <div className="AppBar__Actions__Item">
           <Button
-            variant="link"
             icon={
-              <div className="AppBar__CartIconContainer">
+              <div className="AppBar__BasketIconContainer">
                 <Basket />
-                <div className="AppBar__CartItemsBadge">{basket.length}</div>
+                <div className="AppBar__BasketItemsBadge">{basket.length}</div>
               </div>
             }
             onClick={() => history.push("/checkout")}
@@ -60,7 +58,7 @@ const AppBar = memo(({ title, backButton }: AppBarProps) => {
           </Button>
         </div>
 
-        <div className="AppBar__Actions_Item">
+        <div className="AppBar__Actions__Item">
           <Select
             value={currency}
             onChange={handleOnChangeCurrency}
