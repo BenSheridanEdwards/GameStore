@@ -7,15 +7,20 @@
 }
 
 .CheckoutPage-Overview-container {
+  align-items: center;
   background-color: #1e2131;
   border-radius: 16px;
+  display: flex;
+  flex-direction: column;
+  flex-shrink: 0;
+  margin-left: 5%;
   padding: 32px;
   width: 420px;
-  flex-shrink: 0;
 }
 
 .CheckoutPage-Divider {
-  border: none;
   border-top: 1px solid #2f344b;
+  border: none;
   margin: 42px 0;
+  width: 100%;
 }
