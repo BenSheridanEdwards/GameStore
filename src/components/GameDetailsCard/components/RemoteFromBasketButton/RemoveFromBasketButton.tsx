@@ -7,7 +7,7 @@ interface RemoveFromBasketButtonProps {
   gameId: string;
 }
 
-const RemoveFromCartButton = ({ gameId }: RemoveFromBasketButtonProps) => {
+const RemoveFromBasketButton = ({ gameId }: RemoveFromBasketButtonProps) => {
   const { setGames } = useContext(StoreContext);
 
   const handleClick = () => {
@@ -29,4 +29,4 @@ const RemoveFromCartButton = ({ gameId }: RemoveFromBasketButtonProps) => {
   );
 };
 
-export default RemoveFromCartButton;
+export default RemoveFromBasketButton;

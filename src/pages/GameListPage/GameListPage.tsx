@@ -1,7 +1,7 @@
 import React, { memo, useContext } from "react";
 
 import GameListCardWrapper from "components/GameDetailsCard/components/GameDetailsCardWrapper/GameDetailsCardWrapper";
-import AddToCartButton from "components/GameDetailsCard/components/AddToBasketButton/AddToBasketButton";
+import AddToBasketButton from "components/GameDetailsCard/components/AddToBasketButton/AddToBasketButton";
 import ReleaseDateAndTitle from "components/GameDetailsCard/components/ReleaseDateAndTitle/ReleaseDateAndTitle";
 import Price from "components/GameDetailsCard/components/Price/Price";
 import Quantity from "components/GameDetailsCard/components/Quantity/Quantity";
@@ -47,7 +47,7 @@ const GameListPage = memo(() => {
                   exchangeRates={exchangeRates}
                   selectedCurrency={selectedCurrency}
                 />
-                <AddToCartButton gameId={id} inBasket={inBasket} />
+                <AddToBasketButton gameId={id} inBasket={inBasket} />
               </GameListCardWrapper>
             );
           }

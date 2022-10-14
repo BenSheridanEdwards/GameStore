@@ -8,7 +8,7 @@ import GameListCardWrapper from "components/GameDetailsCard/components/GameDetai
 import ReleaseDateAndTitle from "components/GameDetailsCard/components/ReleaseDateAndTitle/ReleaseDateAndTitle";
 import Price from "components/GameDetailsCard/components/Price/Price";
 import Quantity from "components/GameDetailsCard/components/Quantity/Quantity";
-import RemoveFromCartButton from "components/GameDetailsCard/components/RemoteFromCartButton/RemoveFromCartButton";
+import RemoveFromBasketButton from "components/GameDetailsCard/components/RemoteFromBasketButton/RemoveFromBasketButton";
 import OrderDetails from "components/OrderDetails/OrderDetails";
 import CurrencyContext from "contexts/CurrencyContext";
 
@@ -59,7 +59,7 @@ const CheckoutPage = memo(() => {
                         exchangeRates={exchangeRates}
                         selectedCurrency={selectedCurrency}
                       />
-                      <RemoveFromCartButton gameId={id} />
+                      <RemoveFromBasketButton gameId={id} />
                     </GameListCardWrapper>
                   ) : null;
                 }

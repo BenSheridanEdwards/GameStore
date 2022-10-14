@@ -11,7 +11,7 @@ export default function OrderDetails() {
   const { basket } = useContext(StoreContext);
   const { selectedCurrency, exchangeRates } = useContext(CurrencyContext);
 
-  const cartTotalAmount = useMemo(
+  const basketTotalAmount = useMemo(
     () =>
       exchangeRates && exchangeRates[selectedCurrency] !== 1
         ? convertCurrencyUsingExchangeRate({
@@ -24,7 +24,7 @@ export default function OrderDetails() {
   );
 
   const totalOrderValue = formatAmountToCurrency({
-    amount: cartTotalAmount,
+    amount: basketTotalAmount,
     currency: selectedCurrency,
   });
 
