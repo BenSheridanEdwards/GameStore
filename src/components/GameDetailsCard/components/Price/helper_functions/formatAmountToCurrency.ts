@@ -1,14 +1,14 @@
 interface formatValueToCurrencyInterface {
-  value: number;
+  amount: number;
   currency: string;
 }
 
-export function formatValueToCurrency({
-  value,
+export function formatAmountToCurrency({
+  amount,
   currency,
 }: formatValueToCurrencyInterface) {
   return new Intl.NumberFormat("en-US", {
     style: "currency",
     currency,
-  }).format(value);
+  }).format(amount);
 }

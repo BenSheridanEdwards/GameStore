@@ -1,5 +1,6 @@
 .Tags__List {
   display: flex;
+  flex-wrap: wrap;
   list-style-type: none;
   margin-top: 8px;
 }
@@ -9,10 +10,8 @@
   border-radius: 14px;
   color: #878ca8;
   font-size: 14px;
+  margin-bottom: 4px;
+  margin-right: 4px;
   padding: 4px 8px;
   width: max-content;
-}
-
-.Tags__Tag:nth-child(n + 2) {
-  margin-left: 4px;
 }

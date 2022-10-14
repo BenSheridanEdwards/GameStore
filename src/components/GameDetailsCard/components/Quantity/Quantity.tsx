@@ -1,24 +1,43 @@
-import React, { useCallback, useState } from "react";
+import React, { useCallback, useContext } from "react";
 import Button from "components/Button/Button";
 import { ReactComponent as AddIcon } from "assets/icons/add.svg";
 import { ReactComponent as SubtractIcon } from "assets/icons/subtract.svg";
 import "./styles.css";
+import StoreContext from "contexts/StoreContext";
 
 interface QuantityProps {
-  value: number;
-  onChange: (newValue: number) => void;
+  quantity: number;
+  gameId: string;
 }
 
-const Quantity = ({ value, onChange }: QuantityProps) => {
-  const [quantity, setQuantity] = useState(value);
+const Quantity = ({ quantity, gameId }: QuantityProps) => {
+  const { setGames } = useContext(StoreContext);
 
   const handleDecreaseClick = useCallback(() => {
-    quantity > 1 && setQuantity(quantity - 1);
-  }, [quantity]);
+    if (quantity > 1) {
+      const newQuantity = quantity - 1;
+      setGames((games) => {
+        return games.map((game) => {
+          if (game.id === gameId) {
+            game.quantity = newQuantity;
+          }
+          return game;
+        });
+      });
+    }
+  }, [quantity, setGames, gameId]);
 
   const handleIncreaseClick = useCallback(() => {
-    setQuantity(quantity + 1);
-  }, [quantity]);
+    const newQuantity = quantity + 1;
+    setGames((games) => {
+      return games.map((game) => {
+        if (game.id === gameId) {
+          game.quantity = newQuantity;
+        }
+        return game;
+      });
+    });
+  }, [quantity, setGames, gameId]);
 
   return (
     <div className="Quantity">
