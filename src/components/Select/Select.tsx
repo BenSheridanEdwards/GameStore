@@ -12,7 +12,7 @@ const Select: FC<{
   return (
     <select className="Select" value={value} onChange={onChange}>
       {options.map((option, index) => (
-        <option key={option.value + index} value={option.label}>
+        <option key={option.value + index} value={option.value}>
           {option.label}
         </option>
       ))}

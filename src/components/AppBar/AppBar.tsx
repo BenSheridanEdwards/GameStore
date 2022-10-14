@@ -1,22 +1,31 @@
 import Select from "./../Select/Select";
-import React, { memo, FC } from "react";
+import React, { memo, useContext, useState } from "react";
 import Button from "./../Button/Button";
 import { useHistory } from "react-router-dom";
-import { ReactComponent as Cart } from "./../../assets/icons/cart.svg";
+import { ReactComponent as Basket } from "./../../assets/icons/cart.svg";
 import { ReactComponent as ArrowBack } from "./../../assets/icons/arrow-back.svg";
 import "./styles.css";
-
-export type AppBarProps = {
+import StoreContext from "contexts/StoreContext";
+import CurrencyContext from "contexts/CurrencyContext";
+export interface AppBarProps {
   title: string;
   backButton?: {
     onClick: () => void;
     text: string;
   };
-};
+}
 
-const AppBar: FC<AppBarProps> = memo(({ title, backButton }) => {
+const AppBar = memo(({ title, backButton }: AppBarProps) => {
   const history = useHistory();
-  const handleOnChangeCurrency = console.log;
+  const { basket } = useContext(StoreContext);
+  const { setSelectedCurrency, selectedCurrency } = useContext(CurrencyContext);
+  const [currency, setCurrency] = useState(selectedCurrency);
+
+  const handleOnChangeCurrency = (event: MouseEvent) => {
+    const { value } = event.target as HTMLSelectElement;
+    setCurrency(value);
+    setSelectedCurrency(value);
+  };
 
   return (
     <div className="AppBar">
@@ -41,8 +50,8 @@ const AppBar: FC<AppBarProps> = memo(({ title, backButton }) => {
             variant="link"
             icon={
               <div className="AppBar__CartIconContainer">
-                <Cart />
-                <div className="AppBar__CartItemsBadge">0</div>
+                <Basket />
+                <div className="AppBar__CartItemsBadge">{basket.length}</div>
               </div>
             }
             onClick={() => history.push("/checkout")}
@@ -53,7 +62,7 @@ const AppBar: FC<AppBarProps> = memo(({ title, backButton }) => {
 
         <div className="AppBar__Actions_Item">
           <Select
-            value="usd"
+            value={currency}
             onChange={handleOnChangeCurrency}
             options={[
               {
