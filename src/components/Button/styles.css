@@ -28,6 +28,13 @@
   background-color: transparent;
   color: #14f0af;
   text-transform: none;
+  padding: 0;
+  min-height: 24px;
+}
+
+.Button--link:hover {
+  text-decoration: underline;
+  background-color: transparent;
 }
 
 .Button--secondary {
