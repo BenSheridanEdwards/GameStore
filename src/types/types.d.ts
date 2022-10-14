@@ -6,7 +6,7 @@ export type Game = {
   rating: number;
   releaseDate: string;
   tags: string[];
-  inCart: boolean;
+  inBasket: boolean;
   quantity: number;
 };
 
