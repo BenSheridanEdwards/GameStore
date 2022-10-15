@@ -16,7 +16,3 @@ export type Rates = {
   EUR: number;
   [x: string]: number;
 };
-
-export type GamesApiData = {
-  games: Game[];
-};

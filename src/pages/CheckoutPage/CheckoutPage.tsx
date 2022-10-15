@@ -26,8 +26,8 @@ const CheckoutPage = memo(() => {
         onClick: () => history.push("/list"),
       }}
     >
-      <div className="CheckoutPage-container">
-        <div className="CheckoutPage-GameList-container">
+      <div className="CheckoutPage__Container">
+        <div className="CheckoutPage__GameList__Container">
           {storeGames &&
             storeGames.length > 0 &&
             storeGames
@@ -66,9 +66,9 @@ const CheckoutPage = memo(() => {
               )}
         </div>
 
-        <div className="CheckoutPage-Overview-container">
+        <div className="CheckoutPage__Overview__Container">
           <OrderDetails />
-          <hr className="CheckoutPage-Divider" />
+          <hr className="CheckoutPage__Divider" />
           <Button
             variant="link"
             fullWidth

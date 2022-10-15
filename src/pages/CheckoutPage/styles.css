@@ -1,12 +1,12 @@
-.CheckoutPage-container {
+.CheckoutPage__Container {
   display: flex;
 }
 
-.CheckoutPage-GameList-container {
+.CheckoutPage__GameList__Container {
   flex-grow: 1;
 }
 
-.CheckoutPage-Overview-container {
+.CheckoutPage__Overview__Container {
   align-items: center;
   background-color: #1e2131;
   border-radius: 16px;
@@ -18,7 +18,7 @@
   width: 420px;
 }
 
-.CheckoutPage-Divider {
+.CheckoutPage__Divider {
   border-top: 1px solid #2f344b;
   border: none;
   margin: 42px 0;

@@ -7,7 +7,7 @@ type TagsProps = {
 
 const Tags = ({ tags }: TagsProps) => {
   return (
-    <div className="Tags">
+    <div>
       <h3>Tags</h3>
       <ul className="Tags__List">
         {tags.slice(0, 3).map((tag) => {

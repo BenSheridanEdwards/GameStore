@@ -20,8 +20,33 @@
   text-transform: uppercase;
 }
 
+.Button__Icon {
+  align-items: center;
+  display: flex;
+  height: 18px;
+  justify-content: center;
+  width: 18px;
+}
+
+.Button__Icon + .Button__Text {
+  padding-left: 10px;
+}
+
 .Button:hover {
   background-color: #3b4161;
+}
+
+.Button--primary {
+  background-color: #3f48d8;
+}
+
+.Button--primary:hover {
+  background-color: #4a55e4;
+}
+
+.Button--secondary {
+  background-color: #303550;
+  color: #f5f5f5;
 }
 
 .Button--link {
@@ -37,9 +62,8 @@
   background-color: transparent;
 }
 
-.Button--secondary {
-  background-color: #303550;
-  color: #f5f5f5;
+.Button--link .Button__Icon + .Button__Text {
+  padding-left: 16px;
 }
 
 .Button--icon {
@@ -52,30 +76,6 @@
   width: fit-content;
 }
 
-.Button.Button--primary {
-  background-color: #3f48d8;
-}
-
-.Button.Button--primary:hover {
-  background-color: #4a55e4;
-}
-
 .Button--fullWidth {
   width: 100%;
-}
-
-.Button__Icon {
-  align-items: center;
-  display: flex;
-  height: 18px;
-  justify-content: center;
-  width: 18px;
-}
-
-.Button__Icon + .Button__Text {
-  padding-left: 10px;
-}
-
-.Button--link .Button__Icon + .Button__Text {
-  padding-left: 16px;
 }

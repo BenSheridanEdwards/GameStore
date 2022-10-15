@@ -28,11 +28,11 @@ export function StoreProvider({ children }: { children: ReactNode }) {
   }, []);
 
   useEffect(() => {
-    const gamesinBasket = games.filter((game) => {
+    const gamesInBasket = games.filter((game) => {
       return game.inBasket;
     });
 
-    setBasket(gamesinBasket);
+    setBasket(gamesInBasket);
   }, [games]);
 
   const storeInitialValue: StoreContextInterface = {

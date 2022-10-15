@@ -6,7 +6,7 @@ const Select: FC<{
   onChange: any;
   options: {
     label: string;
-    value: any;
+    value: string;
   }[];
 }> = ({ value, onChange, options }) => {
   return (

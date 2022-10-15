@@ -3,7 +3,7 @@ import { formatAmountToCurrency } from "components/GameDetailsCard/components/Pr
 import { convertCurrencyUsingExchangeRate } from "utils/convertCurrencyUsingExchangeRate";
 import CurrencyContext from "contexts/CurrencyContext";
 import StoreContext from "contexts/StoreContext";
-import { getTotalNumberOfItemsinBasket } from "utils/getTotalNumberOfItemsInBasket";
+import { getTotalNumberOfItemsInBasket } from "utils/getTotalNumberOfItemsInBasket";
 import { getBasketTotalAmount } from "./helper_functions/getBasketTotalAmount";
 import "./style.css";
 
@@ -28,7 +28,7 @@ export default function OrderDetails() {
     currency: selectedCurrency,
   });
 
-  const totalNumberOfItems = getTotalNumberOfItemsinBasket(basket);
+  const totalNumberOfItems = getTotalNumberOfItemsInBasket(basket);
 
   return (
     <div className="OrderDetails">

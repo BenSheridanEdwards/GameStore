@@ -19,9 +19,9 @@ const Button = ({
 }: ButtonProps) => {
   const className = clsx({
     Button: true,
-    "Button--link": variant === "link",
-    "Button--secondary": variant === "secondary",
     "Button--primary": variant === "primary",
+    "Button--secondary": variant === "secondary",
+    "Button--link": variant === "link",
     "Button--icon": variant === "icon",
     "Button--fullWidth": fullWidth,
   });

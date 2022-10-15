@@ -10,7 +10,7 @@ const ratingScale = [1, 2, 3, 4, 5];
 
 const Rating = ({ value }: RatingProps) => {
   return (
-    <div className="Rating">
+    <div>
       <h3>Rating</h3>
       <div>
         {ratingScale.map((ratingIndex) => {

@@ -1,6 +1,6 @@
 import { Rates } from "types/types";
 
-interface getPriceUsingExchangeRateInterface {
+interface convertCurrencyUsingExchangeRateInterface {
   amount: number;
   exchangeRates: Rates;
   desiredCurrency: string;
@@ -10,7 +10,7 @@ export function convertCurrencyUsingExchangeRate({
   amount,
   desiredCurrency,
   exchangeRates,
-}: getPriceUsingExchangeRateInterface) {
+}: convertCurrencyUsingExchangeRateInterface) {
   const exchangeRate = exchangeRates[desiredCurrency];
   return amount * exchangeRate;
 }
