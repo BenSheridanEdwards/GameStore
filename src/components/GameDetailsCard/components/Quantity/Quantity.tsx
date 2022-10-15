@@ -41,7 +41,7 @@ const Quantity = ({ quantity, gameId }: QuantityProps) => {
 
   return (
     <div className="Quantity">
-      <label>Quantity</label>
+      <h3>Quantity</h3>
       <div className="Quantity__Controls">
         <Button
           icon={<SubtractIcon />}

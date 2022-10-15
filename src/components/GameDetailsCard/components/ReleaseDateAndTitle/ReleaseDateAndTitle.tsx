@@ -15,8 +15,8 @@ export default function ReleaseDateAndTitle({
 
   return (
     <div>
-      <label>Released ∙ {formattedReleaseDateString}</label>
-      <h3 className="Title__Text">{title}</h3>
+      <h3>Released ∙ {formattedReleaseDateString}</h3>
+      <div className="Title__Text">{title}</div>
     </div>
   );
 }
