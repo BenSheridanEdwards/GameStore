@@ -35,7 +35,7 @@ const AppBar = memo(({ title, backButton }: AppBarProps) => {
         {backButton && (
           <Button
             variant="link"
-            icon={<ArrowBack />}
+            leadingIcon={<ArrowBack />}
             onClick={backButton.onClick}
           >
             {backButton.text}
@@ -46,7 +46,7 @@ const AppBar = memo(({ title, backButton }: AppBarProps) => {
       <div className="AppBar__ActionsContainer">
         <div className="AppBar__Actions__Item">
           <Button
-            icon={
+            leadingIcon={
               <div className="AppBar__BasketIconContainer">
                 <Basket />
                 <div className="AppBar__BasketItemsBadge">{basket.length}</div>

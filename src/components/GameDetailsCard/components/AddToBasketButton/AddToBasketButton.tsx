@@ -28,7 +28,12 @@ const AddToBasketButton = ({ inBasket, gameId }: AddToBasketButtonProps) => {
   }, [gameId, setGames, inBasket]);
 
   return (
-    <Button icon={icon} variant={variant} onClick={handleClick} fullWidth>
+    <Button
+      leadingIcon={icon}
+      variant={variant}
+      onClick={handleClick}
+      fullWidth
+    >
       {label}
     </Button>
   );

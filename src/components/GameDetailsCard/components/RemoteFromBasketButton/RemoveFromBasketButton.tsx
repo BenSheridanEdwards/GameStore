@@ -23,7 +23,11 @@ const RemoveFromBasketButton = ({ gameId }: RemoveFromBasketButtonProps) => {
   };
 
   return (
-    <Button icon={<TrashIcon />} variant="secondary" onClick={handleClick}>
+    <Button
+      leadingIcon={<TrashIcon />}
+      variant="secondary"
+      onClick={handleClick}
+    >
       Remove
     </Button>
   );

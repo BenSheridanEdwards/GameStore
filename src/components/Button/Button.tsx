@@ -6,7 +6,7 @@ interface ButtonProps {
   onClick: () => void;
   variant?: "link" | "secondary" | "primary" | "icon";
   fullWidth?: boolean;
-  icon?: ReactNode;
+  leadingIcon?: ReactNode;
   children?: ReactNode;
 }
 
@@ -14,7 +14,7 @@ const Button = ({
   children,
   onClick,
   variant,
-  icon,
+  leadingIcon,
   fullWidth,
 }: ButtonProps) => {
   const className = clsx({
@@ -28,8 +28,8 @@ const Button = ({
 
   return (
     <button className={className} onClick={onClick}>
-      {!!icon && <div className="Button__Icon">{icon}</div>}
-      {children && <span className="Button__Text">{children}</span>}
+      {!!leadingIcon && <div className="Button__Icon">{leadingIcon}</div>}
+      {!!children && <span className="Button__Text">{children}</span>}
     </button>
   );
 };

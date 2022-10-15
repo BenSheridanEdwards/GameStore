@@ -40,17 +40,17 @@ const Quantity = ({ quantity, gameId }: QuantityProps) => {
   }, [quantity, setGames, gameId]);
 
   return (
-    <div className="Quantity">
+    <div>
       <h3>Quantity</h3>
       <div className="Quantity__Controls">
         <Button
-          icon={<SubtractIcon />}
+          leadingIcon={<SubtractIcon />}
           onClick={handleDecreaseClick}
           variant="icon"
         />
         <div className="Quantity__Value">{quantity}</div>
         <Button
-          icon={<AddIcon />}
+          leadingIcon={<AddIcon />}
           onClick={handleIncreaseClick}
           variant="icon"
         />
