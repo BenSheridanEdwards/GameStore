@@ -73,5 +73,9 @@
 }
 
 .Button__Icon + .Button__Text {
-  padding-left: 8px;
+  padding-left: 10px;
+}
+
+.Button--link .Button__Icon + .Button__Text {
+  padding-left: 16px;
 }

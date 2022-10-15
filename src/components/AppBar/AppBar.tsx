@@ -32,7 +32,7 @@ const AppBar = memo(({ title, backButton }: AppBarProps) => {
       <div className="AppBar__TitleContainer">
         <div className="AppBar__Title">{title}</div>
 
-        {!!backButton && (
+        {backButton && (
           <Button
             variant="link"
             icon={<ArrowBack />}
@@ -52,6 +52,7 @@ const AppBar = memo(({ title, backButton }: AppBarProps) => {
                 <div className="AppBar__BasketItemsBadge">{basket.length}</div>
               </div>
             }
+            variant="link"
             onClick={() => history.push("/checkout")}
           >
             CHECKOUT

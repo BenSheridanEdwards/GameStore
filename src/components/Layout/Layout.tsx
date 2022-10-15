@@ -12,7 +12,6 @@ const Layout = memo(({ children, title, backButton }: LayoutProps) => {
   return (
     <div className="Layout">
       <AppBar title={title} backButton={backButton} />
-
       <div className="Layout__content">{children}</div>
     </div>
   );
