@@ -27,11 +27,11 @@ We would like you to implement the following two pages:
 
 ##### Testing
 
-We would like you to write at least 2 behavior tests of GameListPage.
+We would like you to write at least 2 behavior tests for GameListPage.
 
 ## Important aspects of assignment
 
-- Different versions of GameDetailsCard is required for GameListPage and CheckoutPage. We would like to see how you could use component composition to achieve desired result.
+- Different versions of GameDetailsCard is required for GameListPage and CheckoutPage. We would like to see how you could use component composition to achieve the desired result.
 - Price of games is loaded in USD, but it needs to be displayed in selected currency. It is important that price would be calculated just once, when currency changes, and not every time when UI re-renders.
 
 ## What we will be assessing?

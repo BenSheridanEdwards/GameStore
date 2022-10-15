@@ -48,7 +48,7 @@ Return specific currency rate
 GET "/api/rates/:currencyCode"
 ```
 
-To access these endpoint you dont need a authentication, you just need to fetch at the route root.
+To access these endpoint you don't need a authentication, you just need to fetch at the route root.
 
 Example:
 
