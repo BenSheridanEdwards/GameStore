@@ -1,6 +1,6 @@
-import React, { memo, ReactNode } from "react";
-import AppBar, { AppBarProps } from "./../AppBar/AppBar";
+import AppBar, { AppBarProps } from "../AppBar/AppBar";
 import "./styles.css";
+import React, { memo, ReactNode } from "react";
 
 interface LayoutProps {
   title: string;

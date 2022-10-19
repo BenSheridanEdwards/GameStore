@@ -1,8 +1,8 @@
-import React, { useMemo } from "react";
-import type { Rates } from "types/types";
-import "./styles.css";
 import { convertCurrencyUsingExchangeRate } from "../../../../utils/convertCurrencyUsingExchangeRate";
 import { formatAmountToCurrency } from "./helper_functions/formatAmountToCurrency";
+import "./styles.css";
+import React, { useMemo } from "react";
+import type { Rates } from "types/types";
 
 interface PriceProps {
   value: number;

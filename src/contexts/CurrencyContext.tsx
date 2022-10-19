@@ -1,5 +1,5 @@
+import { fetchRates } from "../api/fetchFunctions/fetchRates/fetchRates";
 import React, { createContext, ReactNode, useEffect, useState } from "react";
-import { fetchRates } from "../api/fetchRates/fetchRates";
 import type { Rates } from "types/types";
 
 export interface CurrencyContextInterface {

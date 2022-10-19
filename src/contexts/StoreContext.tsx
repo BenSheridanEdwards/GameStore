@@ -1,5 +1,5 @@
+import { fetchGames } from "../api/fetchFunctions/fetchGames/fetchGames";
 import React, { createContext, ReactNode, useEffect, useState } from "react";
-import { fetchGames } from "../api/fetchGames/fetchGames";
 import type { Game } from "types/types";
 
 export interface StoreContextInterface {

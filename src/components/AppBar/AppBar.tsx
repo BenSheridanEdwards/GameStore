@@ -1,12 +1,13 @@
-import Select from "./../Select/Select";
-import React, { memo, useContext, useState } from "react";
-import Button from "./../Button/Button";
-import { useHistory } from "react-router-dom";
-import { ReactComponent as Basket } from "./../../assets/icons/basket.svg";
+import Button from "../Button/Button";
+import Select from "../Select/Select";
 import { ReactComponent as ArrowBack } from "./../../assets/icons/arrow-back.svg";
+import { ReactComponent as Basket } from "./../../assets/icons/basket.svg";
 import "./styles.css";
-import StoreContext from "contexts/StoreContext";
 import CurrencyContext from "contexts/CurrencyContext";
+import StoreContext from "contexts/StoreContext";
+import React, { memo, useContext, useState } from "react";
+import { useHistory } from "react-router-dom";
+
 export interface AppBarProps {
   title: string;
   backButton?: {
@@ -55,7 +56,7 @@ const AppBar = memo(({ title, backButton }: AppBarProps) => {
             variant="link"
             onClick={() => history.push("/checkout")}
           >
-            CHECKOUT
+            Checkout
           </Button>
         </div>
 
