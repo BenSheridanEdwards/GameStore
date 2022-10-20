@@ -1,18 +1,17 @@
 import React, { memo, useContext } from "react";
-
-import GameListCardWrapper from "components/GameDetailsCard/components/GameDetailsCardWrapper/GameDetailsCardWrapper";
-import AddToBasketButton from "components/GameDetailsCard/components/AddToBasketButton/AddToBasketButton";
-import ReleaseDateAndTitle from "components/GameDetailsCard/components/ReleaseDateAndTitle/ReleaseDateAndTitle";
-import Price from "components/GameDetailsCard/components/Price/Price";
-import Quantity from "components/GameDetailsCard/components/Quantity/Quantity";
-import Rating from "components/GameDetailsCard/components/Rating/Rating";
-import Tags from "components/GameDetailsCard/components/Tags/Tags";
-import Layout from "../../components/Layout/Layout";
-import StoreContext from "contexts/StoreContext";
+import { AddToBasketButton } from "components/GameDetailsCard/components/AddToBasketButton/AddToBasketButton";
+import { GameDetailsCardWrapper } from "components/GameDetailsCard/components/GameDetailsCardWrapper/GameDetailsCardWrapper";
+import { Price } from "components/GameDetailsCard/components/Price/Price";
+import { Quantity } from "components/GameDetailsCard/components/Quantity/Quantity";
+import { Rating } from "components/GameDetailsCard/components/Rating/Rating";
+import { ReleaseDateAndTitle } from "components/GameDetailsCard/components/ReleaseDateAndTitle/ReleaseDateAndTitle";
+import { Tags } from "components/GameDetailsCard/components/Tags/Tags";
 import CurrencyContext from "contexts/CurrencyContext";
+import StoreContext from "contexts/StoreContext";
+import { Layout } from "../../components/Layout/Layout";
 
-const GameListPage = memo(() => {
-  const { storeGames } = useContext(StoreContext);
+export const GameListPage = memo(function GameListPage() {
+  const { storeGames, setGames } = useContext(StoreContext);
   const { selectedCurrency, exchangeRates } = useContext(CurrencyContext);
 
   return (
@@ -32,7 +31,7 @@ const GameListPage = memo(() => {
             quantity,
           }) => {
             return (
-              <GameListCardWrapper
+              <GameDetailsCardWrapper
                 artworkUrl={artworkUrl}
                 title={title}
                 id={id}
@@ -47,13 +46,15 @@ const GameListPage = memo(() => {
                   exchangeRates={exchangeRates}
                   selectedCurrency={selectedCurrency}
                 />
-                <AddToBasketButton gameId={id} inBasket={inBasket} />
-              </GameListCardWrapper>
+                <AddToBasketButton
+                  setGamesCallback={setGames}
+                  gameId={id}
+                  inBasket={inBasket}
+                />
+              </GameDetailsCardWrapper>
             );
           }
         )}
     </Layout>
   );
 });
-
-export default GameListPage;

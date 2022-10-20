@@ -1,19 +1,19 @@
-import React, { memo, useContext } from "react";
-import Layout from "../../components/Layout/Layout";
-import Button from "../../components/Button/Button";
-import { useHistory } from "react-router-dom";
-import "./styles.css";
-import StoreContext from "contexts/StoreContext";
-import GameListCardWrapper from "components/GameDetailsCard/components/GameDetailsCardWrapper/GameDetailsCardWrapper";
-import ReleaseDateAndTitle from "components/GameDetailsCard/components/ReleaseDateAndTitle/ReleaseDateAndTitle";
+import React, { memo, ReactElement, useContext } from "react";
+import { GameDetailsCardWrapper } from "components/GameDetailsCard/components/GameDetailsCardWrapper/GameDetailsCardWrapper";
 import Price from "components/GameDetailsCard/components/Price/Price";
-import Quantity from "components/GameDetailsCard/components/Quantity/Quantity";
-import RemoveFromBasketButton from "components/GameDetailsCard/components/RemoteFromBasketButton/RemoveFromBasketButton";
-import OrderDetails from "components/OrderDetails/OrderDetails";
+import { Quantity } from "components/GameDetailsCard/components/Quantity/Quantity";
+import { ReleaseDateAndTitle } from "components/GameDetailsCard/components/ReleaseDateAndTitle/ReleaseDateAndTitle";
+import { RemoveFromBasketButton } from "components/GameDetailsCard/components/RemoteFromBasketButton/RemoveFromBasketButton";
+import { OrderDetails } from "components/OrderDetails/OrderDetails";
 import CurrencyContext from "contexts/CurrencyContext";
+import StoreContext from "contexts/StoreContext";
+import { useHistory } from "react-router-dom";
+import { Button } from "../../components/Button/Button";
+import { Layout } from "../../components/Layout/Layout";
+import "./styles.css";
 
-const CheckoutPage = memo(() => {
-  const { storeGames } = useContext(StoreContext);
+export const CheckoutPage = memo(function CheckoutPage(): ReactElement {
+  const { storeGames, setGames } = useContext(StoreContext);
   const { exchangeRates, selectedCurrency } = useContext(CurrencyContext);
 
   const history = useHistory();
@@ -43,7 +43,7 @@ const CheckoutPage = memo(() => {
                   quantity,
                 }) => {
                   return inBasket ? (
-                    <GameListCardWrapper
+                    <GameDetailsCardWrapper
                       artworkUrl={artworkUrl}
                       title={title}
                       id={id}
@@ -59,8 +59,11 @@ const CheckoutPage = memo(() => {
                         exchangeRates={exchangeRates}
                         selectedCurrency={selectedCurrency}
                       />
-                      <RemoveFromBasketButton gameId={id} />
-                    </GameListCardWrapper>
+                      <RemoveFromBasketButton
+                        gameId={id}
+                        setGamesCallback={setGames}
+                      />
+                    </GameDetailsCardWrapper>
                   ) : null;
                 }
               )}
@@ -81,5 +84,3 @@ const CheckoutPage = memo(() => {
     </Layout>
   );
 });
-
-export default CheckoutPage;
