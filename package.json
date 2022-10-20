@@ -19,7 +19,8 @@
     "build": "react-scripts build",
     "test": "react-scripts test --watchAll --coverage ",
     "test:watch": "react-scripts test --watchAll",
-    "eject": "react-scripts eject"
+    "eject": "react-scripts eject",
+    "zip": "react-scripts git archive --format zip --output ./zipfile.zip main"
   },
   "eslintConfig": {
     "extends": "react-app"
