@@ -1,46 +1,56 @@
-import Button from "../Button/Button";
-import Select from "../Select/Select";
-import { ReactComponent as ArrowBack } from "./../../assets/icons/arrow-back.svg";
-import { ReactComponent as Basket } from "./../../assets/icons/basket.svg";
-import "./styles.css";
+import React, { ChangeEvent, memo, useContext, useState } from "react";
 import CurrencyContext from "contexts/CurrencyContext";
 import StoreContext from "contexts/StoreContext";
-import React, { memo, useContext, useState } from "react";
 import { useHistory } from "react-router-dom";
+import { ReactComponent as ArrowBack } from "../../assets/icons/arrow-back.svg";
+import { ReactComponent as Basket } from "../../assets/icons/basket.svg";
+import { Button } from "../Button/Button";
+import { Select } from "../Select/Select";
+import "./styles.css";
 
 export interface AppBarProps {
-  title: string;
+  headerText: string;
   backButton?: {
     onClick: () => void;
     text: string;
   };
 }
 
-const AppBar = memo(({ title, backButton }: AppBarProps) => {
+export const AppBar = memo(function AppBar({
+  headerText,
+  backButton,
+}: AppBarProps) {
   const history = useHistory();
   const { basket } = useContext(StoreContext);
   const { setSelectedCurrency, selectedCurrency } = useContext(CurrencyContext);
   const [currency, setCurrency] = useState(selectedCurrency);
+  const numberOfGamesInBasket = basket.length;
 
-  const handleOnChangeCurrency = (event: MouseEvent) => {
+  const handleOnChangeCurrency = (event: ChangeEvent) => {
     const { value } = event.target as HTMLSelectElement;
     setCurrency(value);
     setSelectedCurrency(value);
   };
 
+  const handleCheckoutNavigationClick = () => {
+    history.push("/checkout");
+  };
+
   return (
     <div className="AppBar">
-      <div className="AppBar__TitleContainer">
-        <div className="AppBar__Title">{title}</div>
+      <div className="AppBar__HeaderContainer">
+        <h1 className="AppBar__Header">{headerText}</h1>
 
         {backButton && (
-          <Button
-            variant="link"
-            leadingIcon={<ArrowBack />}
-            onClick={backButton.onClick}
-          >
-            {backButton.text}
-          </Button>
+          <nav>
+            <Button
+              variant="link"
+              leadingIcon={<ArrowBack />}
+              onClick={backButton.onClick}
+            >
+              {backButton.text}
+            </Button>
+          </nav>
         )}
       </div>
 
@@ -50,11 +60,13 @@ const AppBar = memo(({ title, backButton }: AppBarProps) => {
             leadingIcon={
               <div className="AppBar__BasketIconContainer">
                 <Basket />
-                <div className="AppBar__BasketItemsBadge">{basket.length}</div>
+                <div className="AppBar__BasketItemsBadge">
+                  {numberOfGamesInBasket}
+                </div>
               </div>
             }
             variant="link"
-            onClick={() => history.push("/checkout")}
+            onClick={handleCheckoutNavigationClick}
           >
             Checkout
           </Button>
@@ -84,5 +96,3 @@ const AppBar = memo(({ title, backButton }: AppBarProps) => {
     </div>
   );
 });
-
-export default memo(AppBar);
