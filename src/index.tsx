@@ -1,19 +1,18 @@
 import React from "react";
-import ReactDOM from "react-dom";
-import GameListPage from "./pages/GameListPage/GameListPage";
-import CheckoutPage from "./pages/CheckoutPage/CheckoutPage";
-import { makeServer } from "mock/server";
-import { StoreProvider } from "./contexts/StoreContext";
 import { CurrencyProvider } from "contexts/CurrencyContext";
 import "fontsource-roboto";
-import "./index.css";
-
+import { makeServer } from "mock/server";
+import ReactDOM from "react-dom";
 import {
   BrowserRouter as Router,
   Switch,
   Route,
   Redirect,
 } from "react-router-dom";
+import { StoreProvider } from "./contexts/StoreContext";
+import "./index.css";
+import { CheckoutPage } from "./pages/CheckoutPage/CheckoutPage";
+import { GameListPage } from "./pages/GameListPage/GameListPage";
 
 makeServer();
 
