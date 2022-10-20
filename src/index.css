@@ -10,6 +10,10 @@ code {
     monospace;
 }
 
+h1 {
+  margin: 0;
+}
+
 h3 {
   font-size: 14px;
   color: #13f0af;
