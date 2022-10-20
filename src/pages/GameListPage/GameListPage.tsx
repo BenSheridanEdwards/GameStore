@@ -47,7 +47,7 @@ export const GameListPage = memo(function GameListPage() {
                   selectedCurrency={selectedCurrency}
                 />
                 <AddToBasketButton
-                  setGamesCallback={setGames}
+                  setBasketCallback={setGames}
                   gameId={id}
                   inBasket={inBasket}
                 />

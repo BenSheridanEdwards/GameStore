@@ -61,7 +61,7 @@ export const CheckoutPage = memo(function CheckoutPage(): ReactElement {
                       />
                       <RemoveFromBasketButton
                         gameId={id}
-                        setGamesCallback={setGames}
+                        setBasketCallback={setGames}
                       />
                     </GameDetailsCardWrapper>
                   ) : null;
