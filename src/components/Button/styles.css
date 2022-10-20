@@ -29,7 +29,7 @@
 }
 
 .Button__Icon + .Button__Text {
-  padding-left: 10px;
+  margin-left: 12px;
 }
 
 .Button:hover {
@@ -60,10 +60,6 @@
 .Button--link:hover {
   text-decoration: underline;
   background-color: transparent;
-}
-
-.Button--link .Button__Icon + .Button__Text {
-  padding-left: 16px;
 }
 
 .Button--icon {

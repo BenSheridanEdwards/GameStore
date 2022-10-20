@@ -1,31 +1,38 @@
+import React, { ReactElement } from "react";
 import { ReactComponent as CheckIcon } from "assets/icons/check.svg";
 import { ReactComponent as PlusIcon } from "assets/icons/plus.svg";
-import Button from "components/Button/Button";
-import StoreContext from "contexts/StoreContext";
-import React, { useCallback, useContext } from "react";
+import { Button } from "components/Button/Button";
+import { Game } from "types/types";
 
 interface AddToBasketButtonProps {
   inBasket: boolean;
   gameId: string;
+  setBasketCallback: React.Dispatch<React.SetStateAction<Game[]>>;
 }
 
-const AddToBasketButton = ({ inBasket, gameId }: AddToBasketButtonProps) => {
-  const { setGames } = useContext(StoreContext);
+export function AddToBasketButton({
+  inBasket,
+  gameId,
+  setBasketCallback,
+}: AddToBasketButtonProps): ReactElement {
   const icon = inBasket ? <CheckIcon /> : <PlusIcon />;
   const label = inBasket ? "Added" : "Add to basket";
   const variant = inBasket ? "secondary" : "primary";
 
-  const handleClick = useCallback(() => {
-    setGames((games) => {
+  const handleClick = () => {
+    setBasketCallback((games: Game[]) => {
       return games.map((game) => {
         if (game.id === gameId) {
-          game.inBasket = !inBasket;
+          return {
+            ...game,
+            inBasket: !inBasket,
+          };
         }
 
         return game;
       });
     });
-  }, [gameId, setGames, inBasket]);
+  };
 
   return (
     <Button
@@ -37,6 +44,4 @@ const AddToBasketButton = ({ inBasket, gameId }: AddToBasketButtonProps) => {
       {label}
     </Button>
   );
-};
-
-export default AddToBasketButton;
+}

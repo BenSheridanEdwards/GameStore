@@ -10,13 +10,13 @@ interface ButtonProps {
   children?: ReactNode;
 }
 
-const Button = ({
+export const Button = memo(function Button({
   children,
   onClick,
   variant,
   leadingIcon,
   fullWidth,
-}: ButtonProps) => {
+}: ButtonProps) {
   const className = clsx({
     Button: true,
     "Button--primary": variant === "primary",
@@ -27,11 +27,9 @@ const Button = ({
   });
 
   return (
-    <button className={className} onClick={onClick}>
+    <button className={className} onClick={onClick} type="button">
       {!!leadingIcon && <div className="Button__Icon">{leadingIcon}</div>}
       {!!children && <span className="Button__Text">{children}</span>}
     </button>
   );
-};
-
-export default memo(Button);
+});
