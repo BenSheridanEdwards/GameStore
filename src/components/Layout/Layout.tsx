@@ -3,15 +3,15 @@ import { AppBar, AppBarProps } from "../AppBar/AppBar";
 import "./styles.css";
 
 interface LayoutProps {
-  title: string;
   backButton?: AppBarProps["backButton"];
   children: ReactNode;
+  title: string;
 }
 
 export function Layout({
+  backButton,
   children,
   title,
-  backButton,
 }: LayoutProps): ReactElement {
   return (
     <div className="Layout">

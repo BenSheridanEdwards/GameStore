@@ -1,24 +1,37 @@
-import { fetchGames } from "../api/fetchFunctions/fetchGames/fetchGames";
-import React, { createContext, ReactNode, useEffect, useState } from "react";
+import React, {
+  createContext,
+  ReactElement,
+  ReactNode,
+  useEffect,
+  useMemo,
+  useState,
+} from "react";
 import type { Game } from "types/types";
+import { fetchGames } from "../api/fetchFunctions/fetchGames/fetchGames";
 
-export interface StoreContextInterface {
+export type StoreContextValue = {
   storeGames: Game[];
   basket: Game[];
   setGames: React.Dispatch<React.SetStateAction<Game[]>>;
+};
+
+interface StoreProviderProps {
+  passedStoreValue?: StoreContextValue;
+  children: ReactNode;
 }
 
-const StoreContext = createContext<StoreContextInterface>(
-  {} as StoreContextInterface
-);
+const StoreContext = createContext<StoreContextValue>({} as StoreContextValue);
 
-export function StoreProvider({ children }: { children: ReactNode }) {
+export function StoreProvider({
+  children,
+  passedStoreValue,
+}: StoreProviderProps): ReactElement {
   const [games, setGames] = useState<Game[]>([]);
   const [basket, setBasket] = useState<Game[]>([]);
 
   useEffect(() => {
     const controller = new AbortController();
-    const signal = controller.signal;
+    const { signal } = controller;
 
     fetchGames({ setStateFunction: setGames, signal });
 
@@ -35,14 +48,16 @@ export function StoreProvider({ children }: { children: ReactNode }) {
     setBasket(gamesInBasket);
   }, [games]);
 
-  const storeInitialValue: StoreContextInterface = {
-    storeGames: games,
-    basket,
-    setGames,
-  };
+  const storeInitialValue: StoreContextValue = useMemo(() => {
+    return {
+      storeGames: games,
+      basket,
+      setGames,
+    };
+  }, [basket, games]);
 
   return (
-    <StoreContext.Provider value={storeInitialValue}>
+    <StoreContext.Provider value={passedStoreValue || storeInitialValue}>
       {children}
     </StoreContext.Provider>
   );
