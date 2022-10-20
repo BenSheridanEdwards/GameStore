@@ -1,4 +1,4 @@
-import React, { ReactNode } from "react";
+import React, { ReactElement, ReactNode } from "react";
 import "./styles.css";
 
 interface GameDetailsCardWrapperProps {
@@ -8,14 +8,14 @@ interface GameDetailsCardWrapperProps {
   title: string;
 }
 
-export default function GameDetailsCardWrapper({
+export function GameDetailsCardWrapper({
   artworkUrl,
   children,
   id,
   title,
-}: GameDetailsCardWrapperProps) {
+}: GameDetailsCardWrapperProps): ReactElement {
   return (
-    <div id={id} className="Card">
+    <div id={id} className="Card" data-testid={`GameDetailsCard-${id}`}>
       <img className="Card__Artwork" src={artworkUrl} alt={title} />
       <div className="Card__Content">{children}</div>
     </div>

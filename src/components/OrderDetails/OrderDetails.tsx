@@ -1,20 +1,20 @@
-import React, { useContext, useMemo } from "react";
-import { formatAmountToCurrency } from "components/GameDetailsCard/components/Price/helper_functions/formatAmountToCurrency";
-import { convertCurrencyUsingExchangeRate } from "utils/convertCurrencyUsingExchangeRate";
+import React, { ReactElement, useContext, useMemo } from "react";
+import { formatCurrency } from "components/GameDetailsCard/components/Price/helper_functions/formatCurrency";
 import CurrencyContext from "contexts/CurrencyContext";
 import StoreContext from "contexts/StoreContext";
-import { getTotalNumberOfItemsInBasket } from "utils/getTotalNumberOfItemsInBasket";
-import { getBasketTotalAmount } from "./helper_functions/getBasketTotalAmount";
+import { convertCurrencyAmount } from "utils/convertCurrencyAmount/convertCurrencyAmount";
+import { getTotalNumberOfItemsInBasket } from "utils/getTotalNumberOfItemsInBasket/getTotalNumberOfItemsInBasket";
+import { getBasketTotalAmount } from "./helper_functions/getBasketTotalAmount/getBasketTotalAmount";
 import "./style.css";
 
-export default function OrderDetails() {
+export function OrderDetails(): ReactElement {
   const { basket } = useContext(StoreContext);
   const { selectedCurrency, exchangeRates } = useContext(CurrencyContext);
 
   const basketTotalAmount = useMemo(
     () =>
       exchangeRates && exchangeRates[selectedCurrency] !== 1
-        ? convertCurrencyUsingExchangeRate({
+        ? convertCurrencyAmount({
             amount: getBasketTotalAmount(basket),
             desiredCurrency: selectedCurrency,
             exchangeRates,
@@ -23,7 +23,7 @@ export default function OrderDetails() {
     [exchangeRates, selectedCurrency, basket]
   );
 
-  const totalOrderValue = formatAmountToCurrency({
+  const totalOrderValue = formatCurrency({
     amount: basketTotalAmount,
     currency: selectedCurrency,
   });

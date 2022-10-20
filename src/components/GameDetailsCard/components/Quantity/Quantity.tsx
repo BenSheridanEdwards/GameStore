@@ -1,16 +1,16 @@
-import React, { useCallback, useContext } from "react";
-import Button from "components/Button/Button";
+import React, { ReactElement, useCallback, useContext } from "react";
 import { ReactComponent as AddIcon } from "assets/icons/add.svg";
 import { ReactComponent as SubtractIcon } from "assets/icons/subtract.svg";
-import "./styles.css";
+import { Button } from "components/Button/Button";
 import StoreContext from "contexts/StoreContext";
+import "./styles.css";
 
 interface QuantityProps {
   quantity: number;
   gameId: string;
 }
 
-const Quantity = ({ quantity, gameId }: QuantityProps) => {
+export function Quantity({ quantity, gameId }: QuantityProps): ReactElement {
   const { setGames } = useContext(StoreContext);
 
   const handleDecreaseClick = useCallback(() => {
@@ -19,7 +19,10 @@ const Quantity = ({ quantity, gameId }: QuantityProps) => {
       setGames((games) => {
         return games.map((game) => {
           if (game.id === gameId) {
-            game.quantity = newQuantity;
+            return {
+              ...game,
+              quantity: newQuantity,
+            };
           }
           return game;
         });
@@ -32,7 +35,10 @@ const Quantity = ({ quantity, gameId }: QuantityProps) => {
     setGames((games) => {
       return games.map((game) => {
         if (game.id === gameId) {
-          game.quantity = newQuantity;
+          return {
+            ...game,
+            quantity: newQuantity,
+          };
         }
         return game;
       });
@@ -57,6 +63,4 @@ const Quantity = ({ quantity, gameId }: QuantityProps) => {
       </div>
     </div>
   );
-};
-
-export default Quantity;
+}

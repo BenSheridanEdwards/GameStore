@@ -1,16 +1,16 @@
-import React from "react";
-import "./styles.css";
+import React, { ReactElement } from "react";
 import getLocaleDateString from "./helper_functions/getLocaleDateString";
+import "./styles.css";
 
 interface ReleaseDateAndTitleProps {
   releaseDate: string;
   title: string;
 }
 
-export default function ReleaseDateAndTitle({
+export function ReleaseDateAndTitle({
   releaseDate,
   title,
-}: ReleaseDateAndTitleProps) {
+}: ReleaseDateAndTitleProps): ReactElement {
   const formattedReleaseDateString = getLocaleDateString(releaseDate);
 
   return (

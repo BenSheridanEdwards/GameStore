@@ -1,11 +1,11 @@
-import React from "react";
+import React, { ReactElement } from "react";
 import "./styles.css";
 
 type TagsProps = {
   tags: string[];
 };
 
-const Tags = ({ tags }: TagsProps) => {
+export function Tags({ tags }: TagsProps): ReactElement {
   return (
     <div>
       <h3>Tags</h3>
@@ -20,6 +20,4 @@ const Tags = ({ tags }: TagsProps) => {
       </ul>
     </div>
   );
-};
-
-export default Tags;
+}

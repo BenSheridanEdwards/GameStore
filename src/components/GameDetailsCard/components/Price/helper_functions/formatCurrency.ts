@@ -1,12 +1,12 @@
-interface formatValueToCurrencyInterface {
+interface FormatCurrencyInterface {
   amount: number;
   currency: string;
 }
 
-export function formatAmountToCurrency({
+export function formatCurrency({
   amount,
   currency,
-}: formatValueToCurrencyInterface) {
+}: FormatCurrencyInterface): string {
   return new Intl.NumberFormat("en-US", {
     style: "currency",
     currency,

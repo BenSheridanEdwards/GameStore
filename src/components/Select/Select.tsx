@@ -1,23 +1,31 @@
-import React, { FC, memo } from "react";
+import React, { ChangeEvent, ChangeEventHandler, ReactElement } from "react";
 import "./styles.css";
 
-const Select: FC<{
-  value: any;
-  onChange: any;
+interface SelectProps {
+  value: string;
+  onChange: (event: ChangeEvent) => void;
   options: {
     label: string;
     value: string;
   }[];
-}> = ({ value, onChange, options }) => {
+}
+
+export function Select({
+  value,
+  onChange,
+  options,
+}: SelectProps): ReactElement {
   return (
-    <select className="Select" value={value} onChange={onChange}>
-      {options.map((option, index) => (
-        <option key={option.value + index} value={option.value}>
+    <select
+      className="Select"
+      value={value}
+      onChange={onChange as ChangeEventHandler}
+    >
+      {options.map((option) => (
+        <option key={option.value} value={option.value}>
           {option.label}
         </option>
       ))}
     </select>
   );
-};
-
-export default memo(Select);
+}

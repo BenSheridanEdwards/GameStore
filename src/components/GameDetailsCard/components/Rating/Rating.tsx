@@ -1,14 +1,15 @@
-import React from "react";
-import clsx from "clsx";
+import React, { ReactElement } from "react";
 import { ReactComponent as StarIcon } from "assets/icons/star.svg";
+import clsx from "clsx";
 import "./styles.css";
+
 type RatingProps = {
   value: number;
 };
 
 const ratingScale = [1, 2, 3, 4, 5];
 
-const Rating = ({ value }: RatingProps) => {
+export function Rating({ value }: RatingProps): ReactElement {
   return (
     <div>
       <h3>Rating</h3>
@@ -24,6 +25,4 @@ const Rating = ({ value }: RatingProps) => {
       </div>
     </div>
   );
-};
-
-export default Rating;
+}

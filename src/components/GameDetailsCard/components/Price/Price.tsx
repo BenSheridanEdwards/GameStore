@@ -1,8 +1,8 @@
-import { convertCurrencyUsingExchangeRate } from "../../../../utils/convertCurrencyUsingExchangeRate";
-import { formatAmountToCurrency } from "./helper_functions/formatAmountToCurrency";
-import "./styles.css";
-import React, { useMemo } from "react";
+import React, { ReactElement, useMemo } from "react";
 import type { Rates } from "types/types";
+import { convertCurrencyAmount } from "../../../../utils/convertCurrencyAmount/convertCurrencyAmount";
+import { formatCurrency } from "./helper_functions/formatCurrency";
+import "./styles.css";
 
 interface PriceProps {
   value: number;
@@ -10,11 +10,15 @@ interface PriceProps {
   exchangeRates: Rates | null;
 }
 
-const Price = ({ value, selectedCurrency, exchangeRates }: PriceProps) => {
-  const price = useMemo(
+export function Price({
+  value,
+  selectedCurrency,
+  exchangeRates,
+}: PriceProps): ReactElement {
+  const amountInSelectedCurrency = useMemo(
     () =>
       exchangeRates && exchangeRates[selectedCurrency] !== 1
-        ? convertCurrencyUsingExchangeRate({
+        ? convertCurrencyAmount({
             amount: value,
             desiredCurrency: selectedCurrency,
             exchangeRates,
@@ -23,12 +27,12 @@ const Price = ({ value, selectedCurrency, exchangeRates }: PriceProps) => {
     [exchangeRates, selectedCurrency, value]
   );
 
-  const priceFormattedInSelectedCurrency = formatAmountToCurrency({
-    amount: price,
+  const price = formatCurrency({
+    amount: amountInSelectedCurrency,
     currency: selectedCurrency,
   });
 
-  return <div className="Price">{priceFormattedInSelectedCurrency}</div>;
-};
+  return <div className="Price">{price}</div>;
+}
 
 export default Price;
