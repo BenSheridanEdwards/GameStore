@@ -11,13 +11,13 @@
   top: 0;
 }
 
-.AppBar__TitleContainer {
+.AppBar__HeaderContainer {
   display: flex;
   flex-direction: column;
   width: 240px;
 }
 
-.AppBar__Title {
+.AppBar__Header {
   font-size: 24px;
   font-weight: bold;
   line-height: 32px;
