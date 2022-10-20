@@ -1,8 +1,13 @@
+/* eslint-disable @typescript-eslint/explicit-module-boundary-types */
+
+/* eslint-disable import/no-extraneous-dependencies */
+
+/* eslint-disable prettier/prettier */
 import { Server } from "miragejs";
 import { games } from "./games";
 
 export function makeServer({ environment = "development" } = {}) {
-  let server = new Server({ environment });
+  const server = new Server({ environment });
 
   server.get("/api/games", { games });
 
