@@ -1,19 +1,19 @@
-import React, { ReactElement } from "react";
+import React, { ReactElement, Dispatch, SetStateAction } from "react";
 import { ReactComponent as TrashIcon } from "assets/icons/trash.svg";
 import { Button } from "components/Button/Button";
 import { Game } from "types/types";
 
 interface RemoveFromBasketButtonProps {
   gameId: string;
-  setBasketCallback: React.Dispatch<React.SetStateAction<Game[]>>;
+  setStateCallback: Dispatch<SetStateAction<Game[]>>;
 }
 
 export function RemoveFromBasketButton({
   gameId,
-  setBasketCallback,
+  setStateCallback,
 }: RemoveFromBasketButtonProps): ReactElement {
   const handleClick = () => {
-    setBasketCallback((games: Game[]) => {
+    setStateCallback((games: Game[]) => {
       return games.map((game) => {
         if (game.id === gameId) {
           return {

@@ -1,7 +1,6 @@
 import React from "react";
 import { render, screen } from "@testing-library/react";
 import userEvent from "@testing-library/user-event";
-import { StoreProvider } from "contexts/StoreContext";
 import { RemoveFromBasketButton } from "./RemoveFromBasketButton";
 
 const mockSetGamesCallback = jest.fn();
@@ -9,12 +8,10 @@ const mockSetGamesCallback = jest.fn();
 describe("RemoveFromBasketButton", () => {
   beforeEach(() => {
     render(
-      <StoreProvider>
-        <RemoveFromBasketButton
-          setBasketCallback={mockSetGamesCallback}
-          gameId="1"
-        />
-      </StoreProvider>
+      <RemoveFromBasketButton
+        setStateCallback={mockSetGamesCallback}
+        gameId="1"
+      />
     );
   });
 

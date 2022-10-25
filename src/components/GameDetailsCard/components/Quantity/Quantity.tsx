@@ -1,22 +1,30 @@
-import React, { ReactElement, useCallback, useContext } from "react";
+import React, {
+  ReactElement,
+  useCallback,
+  Dispatch,
+  SetStateAction,
+} from "react";
 import { ReactComponent as AddIcon } from "assets/icons/add.svg";
 import { ReactComponent as SubtractIcon } from "assets/icons/subtract.svg";
 import { Button } from "components/Button/Button";
-import StoreContext from "contexts/StoreContext";
+import { Game } from "types/types";
 import "./styles.css";
 
 interface QuantityProps {
-  quantity: number;
   gameId: string;
+  quantity: number;
+  setStateCallback: Dispatch<SetStateAction<Game[]>>;
 }
 
-export function Quantity({ quantity, gameId }: QuantityProps): ReactElement {
-  const { setGames } = useContext(StoreContext);
-
+export function Quantity({
+  gameId,
+  quantity,
+  setStateCallback,
+}: QuantityProps): ReactElement {
   const handleDecreaseClick = useCallback(() => {
     if (quantity > 1) {
       const newQuantity = quantity - 1;
-      setGames((games) => {
+      setStateCallback((games) => {
         return games.map((game) => {
           if (game.id === gameId) {
             return {
@@ -28,11 +36,11 @@ export function Quantity({ quantity, gameId }: QuantityProps): ReactElement {
         });
       });
     }
-  }, [quantity, setGames, gameId]);
+  }, [quantity, setStateCallback, gameId]);
 
   const handleIncreaseClick = useCallback(() => {
     const newQuantity = quantity + 1;
-    setGames((games) => {
+    setStateCallback((games) => {
       return games.map((game) => {
         if (game.id === gameId) {
           return {
@@ -43,7 +51,7 @@ export function Quantity({ quantity, gameId }: QuantityProps): ReactElement {
         return game;
       });
     });
-  }, [quantity, setGames, gameId]);
+  }, [quantity, setStateCallback, gameId]);
 
   return (
     <div>

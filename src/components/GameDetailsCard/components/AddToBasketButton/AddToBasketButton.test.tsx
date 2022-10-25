@@ -1,7 +1,6 @@
 import React from "react";
 import { render, screen } from "@testing-library/react";
 import userEvent from "@testing-library/user-event";
-import { StoreProvider } from "contexts/StoreContext";
 import { AddToBasketButton } from "./AddToBasketButton";
 
 const mockSetGamesCallback = jest.fn();
@@ -9,13 +8,11 @@ const mockSetGamesCallback = jest.fn();
 describe("AddToBasketButton", () => {
   beforeEach(() => {
     render(
-      <StoreProvider>
-        <AddToBasketButton
-          setBasketCallback={mockSetGamesCallback}
-          inBasket={false}
-          gameId="1"
-        />
-      </StoreProvider>
+      <AddToBasketButton
+        setStateCallback={mockSetGamesCallback}
+        inBasket={false}
+        gameId="1"
+      />
     );
   });
 
@@ -29,13 +26,11 @@ describe("AddToBasketButton", () => {
 
   it("renders the button text 'Added' when the item is in the user's basket", () => {
     render(
-      <StoreProvider>
-        <AddToBasketButton
-          setBasketCallback={mockSetGamesCallback}
-          inBasket
-          gameId="1"
-        />
-      </StoreProvider>
+      <AddToBasketButton
+        setStateCallback={mockSetGamesCallback}
+        inBasket
+        gameId="1"
+      />
     );
     screen.getByRole("button", { name: /Added/i });
   });

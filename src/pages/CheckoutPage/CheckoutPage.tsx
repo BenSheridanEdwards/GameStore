@@ -53,7 +53,11 @@ export const CheckoutPage = memo(function CheckoutPage(): ReactElement {
                         releaseDate={releaseDate}
                         title={title}
                       />
-                      <Quantity gameId={id} quantity={quantity} />
+                      <Quantity
+                        gameId={id}
+                        quantity={quantity}
+                        setStateCallback={setGames}
+                      />
                       <Price
                         value={price}
                         exchangeRates={exchangeRates}
@@ -61,7 +65,7 @@ export const CheckoutPage = memo(function CheckoutPage(): ReactElement {
                       />
                       <RemoveFromBasketButton
                         gameId={id}
-                        setBasketCallback={setGames}
+                        setStateCallback={setGames}
                       />
                     </GameDetailsCardWrapper>
                   ) : null;

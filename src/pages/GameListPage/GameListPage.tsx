@@ -40,16 +40,20 @@ export const GameListPage = memo(function GameListPage() {
                 <ReleaseDateAndTitle releaseDate={releaseDate} title={title} />
                 <Rating value={rating} />
                 <Tags tags={tags} />
-                <Quantity gameId={id} quantity={quantity} />
+                <Quantity
+                  gameId={id}
+                  quantity={quantity}
+                  setStateCallback={setGames}
+                />
                 <Price
-                  value={price}
                   exchangeRates={exchangeRates}
                   selectedCurrency={selectedCurrency}
+                  value={price}
                 />
                 <AddToBasketButton
-                  setBasketCallback={setGames}
                   gameId={id}
                   inBasket={inBasket}
+                  setStateCallback={setGames}
                 />
               </GameDetailsCardWrapper>
             );

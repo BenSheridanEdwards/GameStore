@@ -14,9 +14,9 @@
     "noEmit": true,
     "noFallthroughCasesInSwitch": true,
     "resolveJsonModule": true,
+    "skipLibCheck": true,
     "strict": true,
     "target": "ESNext",
-    "skipLibCheck": true,
     "types": []
   },
   "include": ["src", "eslintrc.cjs"],
