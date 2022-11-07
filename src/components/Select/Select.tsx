@@ -1,4 +1,4 @@
-import React, { ChangeEvent, ChangeEventHandler, ReactElement } from "react";
+import React, { ChangeEvent, ReactElement } from "react";
 import "./styles.css";
 
 interface SelectProps {
@@ -16,11 +16,7 @@ export function Select({
   options,
 }: SelectProps): ReactElement {
   return (
-    <select
-      className="Select"
-      value={value}
-      onChange={onChange as ChangeEventHandler}
-    >
+    <select className="Select" value={value} onChange={onChange}>
       {options.map((option) => (
         <option key={option.value} value={option.value}>
           {option.label}

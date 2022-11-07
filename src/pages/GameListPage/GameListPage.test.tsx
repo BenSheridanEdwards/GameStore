@@ -4,6 +4,7 @@ import { CurrencyProvider } from "contexts/CurrencyContext";
 import { StoreProvider } from "contexts/StoreContext";
 import { AnyRegistry } from "miragejs/-types";
 import { Server } from "miragejs/server";
+import { BrowserRouter as Router } from "react-router-dom";
 import { makeServer } from "../../mock/server";
 import { GameListPage } from "./GameListPage";
 
@@ -13,11 +14,13 @@ describe("GameListPage", () => {
     server = makeServer({ environment: "test" });
 
     render(
-      <StoreProvider>
-        <CurrencyProvider>
-          <GameListPage />
-        </CurrencyProvider>
-      </StoreProvider>
+      <Router>
+        <StoreProvider>
+          <CurrencyProvider>
+            <GameListPage />
+          </CurrencyProvider>
+        </StoreProvider>
+      </Router>
     );
   });
 

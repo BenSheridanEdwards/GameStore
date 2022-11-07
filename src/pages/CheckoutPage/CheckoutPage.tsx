@@ -21,9 +21,9 @@ export const CheckoutPage = memo(function CheckoutPage(): ReactElement {
   return (
     <Layout
       title="Checkout"
-      backButton={{
+      backLink={{
         text: "Go back to overview page",
-        onClick: () => history.push("/list"),
+        to: "/list",
       }}
     >
       <div className="CheckoutPage__Container">
