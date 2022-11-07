@@ -15,9 +15,9 @@ export function GameDetailsCardWrapper({
   title,
 }: GameDetailsCardWrapperProps): ReactElement {
   return (
-    <div id={id} className="Card" data-testid={`GameDetailsCard-${id}`}>
+    <article id={id} className="Card" data-testid={`GameDetailsCard-${id}`}>
       <img className="Card__Artwork" src={artworkUrl} alt={title} />
       <div className="Card__Content">{children}</div>
-    </div>
+    </article>
   );
 }

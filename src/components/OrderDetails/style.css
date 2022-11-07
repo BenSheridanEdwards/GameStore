@@ -2,18 +2,18 @@
   width: 100%;
 }
 
-.OrderDetails__OrderValue,
-.OrderDetails__OrderSize {
+.OrderDetails__value,
+.OrderDetails__size {
   display: flex;
   font-size: 24px;
   justify-content: space-between;
   width: 100%;
 }
 
-.OrderDetails__OrderValue {
+.OrderDetails__value {
   font-weight: bold;
 }
 
-.OrderDetails__OrderSize {
+.OrderDetails__size {
   margin-top: 24px;
 }

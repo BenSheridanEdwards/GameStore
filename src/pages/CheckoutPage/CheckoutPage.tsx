@@ -4,6 +4,7 @@ import Price from "components/GameDetailsCard/components/Price/Price";
 import { Quantity } from "components/GameDetailsCard/components/Quantity/Quantity";
 import { ReleaseDateAndTitle } from "components/GameDetailsCard/components/ReleaseDateAndTitle/ReleaseDateAndTitle";
 import { RemoveFromBasketButton } from "components/GameDetailsCard/components/RemoteFromBasketButton/RemoveFromBasketButton";
+import { Link } from "components/Link/Link";
 import { OrderDetails } from "components/OrderDetails/OrderDetails";
 import CurrencyContext from "contexts/CurrencyContext";
 import StoreContext from "contexts/StoreContext";
@@ -26,8 +27,8 @@ export const CheckoutPage = memo(function CheckoutPage(): ReactElement {
         to: "/list",
       }}
     >
-      <div className="CheckoutPage__Container">
-        <div className="CheckoutPage__GameList__Container">
+      <div className="CheckoutPage">
+        <ul>
           {storeGames &&
             storeGames.length > 0 &&
             storeGames
@@ -43,47 +44,42 @@ export const CheckoutPage = memo(function CheckoutPage(): ReactElement {
                   quantity,
                 }) => {
                   return inBasket ? (
-                    <GameDetailsCardWrapper
-                      artworkUrl={artworkUrl}
-                      title={title}
-                      id={id}
-                      key={id}
-                    >
-                      <ReleaseDateAndTitle
-                        releaseDate={releaseDate}
+                    <li key={id}>
+                      <GameDetailsCardWrapper
+                        artworkUrl={artworkUrl}
                         title={title}
-                      />
-                      <Quantity
-                        gameId={id}
-                        quantity={quantity}
-                        setStateCallback={setGames}
-                      />
-                      <Price
-                        value={price}
-                        exchangeRates={exchangeRates}
-                        selectedCurrency={selectedCurrency}
-                      />
-                      <RemoveFromBasketButton
-                        gameId={id}
-                        setStateCallback={setGames}
-                      />
-                    </GameDetailsCardWrapper>
+                        id={id}
+                      >
+                        <ReleaseDateAndTitle
+                          releaseDate={releaseDate}
+                          title={title}
+                        />
+                        <Quantity
+                          gameId={id}
+                          quantity={quantity}
+                          setStateCallback={setGames}
+                        />
+                        <Price
+                          value={price}
+                          exchangeRates={exchangeRates}
+                          selectedCurrency={selectedCurrency}
+                        />
+                        <RemoveFromBasketButton
+                          gameId={id}
+                          setStateCallback={setGames}
+                        />
+                      </GameDetailsCardWrapper>
+                    </li>
                   ) : null;
                 }
               )}
-        </div>
+        </ul>
 
-        <div className="CheckoutPage__Overview__Container">
+        <aside className="OrderOverview">
           <OrderDetails />
-          <hr className="CheckoutPage__Divider" />
-          <Button
-            variant="link"
-            fullWidth
-            onClick={() => history.push("/list")}
-          >
-            Back to overview
-          </Button>
-        </div>
+          <hr className="Overview__divider" />
+          <Link to="/list">Back to overview</Link>
+        </aside>
       </div>
     </Layout>
   );

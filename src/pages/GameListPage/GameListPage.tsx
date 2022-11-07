@@ -9,6 +9,7 @@ import { Tags } from "components/GameDetailsCard/components/Tags/Tags";
 import CurrencyContext from "contexts/CurrencyContext";
 import StoreContext from "contexts/StoreContext";
 import { Layout } from "../../components/Layout/Layout";
+import "./GameListPage.css";
 
 export const GameListPage = memo(function GameListPage() {
   const { storeGames, setGames } = useContext(StoreContext);
@@ -16,49 +17,55 @@ export const GameListPage = memo(function GameListPage() {
 
   return (
     <Layout title="Games">
-      {storeGames &&
-        storeGames.length > 0 &&
-        storeGames.map(
-          ({
-            artworkUrl,
-            releaseDate,
-            tags,
-            rating,
-            price,
-            title,
-            id,
-            inBasket,
-            quantity,
-          }) => {
-            return (
-              <GameDetailsCardWrapper
-                artworkUrl={artworkUrl}
-                title={title}
-                id={id}
-                key={id}
-              >
-                <ReleaseDateAndTitle releaseDate={releaseDate} title={title} />
-                <Rating value={rating} />
-                <Tags tags={tags} />
-                <Quantity
-                  gameId={id}
-                  quantity={quantity}
-                  setStateCallback={setGames}
-                />
-                <Price
-                  exchangeRates={exchangeRates}
-                  selectedCurrency={selectedCurrency}
-                  value={price}
-                />
-                <AddToBasketButton
-                  gameId={id}
-                  inBasket={inBasket}
-                  setStateCallback={setGames}
-                />
-              </GameDetailsCardWrapper>
-            );
-          }
-        )}
+      <ul>
+        {storeGames &&
+          storeGames.length > 0 &&
+          storeGames.map(
+            ({
+              artworkUrl,
+              releaseDate,
+              tags,
+              rating,
+              price,
+              title,
+              id,
+              inBasket,
+              quantity,
+            }) => {
+              return (
+                <li key={id} className="GameList__item">
+                  <GameDetailsCardWrapper
+                    artworkUrl={artworkUrl}
+                    title={title}
+                    id={id}
+                  >
+                    <ReleaseDateAndTitle
+                      releaseDate={releaseDate}
+                      title={title}
+                    />
+                    <Rating value={rating} />
+                    <Tags tags={tags} />
+                    <Quantity
+                      gameId={id}
+                      quantity={quantity}
+                      setStateCallback={setGames}
+                    />
+                    <Price
+                      exchangeRates={exchangeRates}
+                      selectedCurrency={selectedCurrency}
+                      value={price}
+                    />
+                    <AddToBasketButton
+                      gameId={id}
+                      inBasket={inBasket}
+                      setStateCallback={setGames}
+                    />
+                  </GameDetailsCardWrapper>
+                </li>
+              );
+            }
+          )}
+      </ul>
     </Layout>
   );
 });
