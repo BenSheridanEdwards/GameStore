@@ -4,6 +4,7 @@ import { CurrencyProvider } from "contexts/CurrencyContext";
 import { StoreProvider } from "contexts/StoreContext";
 import { AnyRegistry } from "miragejs/-types";
 import { Server } from "miragejs/server";
+import { BrowserRouter } from "react-router-dom";
 import { makeServer } from "../../mock/server";
 import { CheckoutPage } from "./CheckoutPage";
 import { storeContextValueMock } from "./mocks/storeContext.mock";
@@ -14,13 +15,15 @@ describe("CheckoutPage", () => {
     server = makeServer({ environment: "test" });
 
     render(
-      <StoreProvider
-        passedStoreValue={{ setGames: jest.fn(), ...storeContextValueMock }}
-      >
-        <CurrencyProvider>
-          <CheckoutPage />
-        </CurrencyProvider>
-      </StoreProvider>
+      <BrowserRouter>
+        <StoreProvider
+          passedStoreValue={{ setGames: jest.fn(), ...storeContextValueMock }}
+        >
+          <CurrencyProvider>
+            <CheckoutPage />
+          </CurrencyProvider>
+        </StoreProvider>
+      </BrowserRouter>
     );
   });
 
