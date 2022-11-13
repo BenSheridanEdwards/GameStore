@@ -13,7 +13,7 @@ import { NavBar } from "../../components/NavBar/NavBar";
 import CurrencyContext from "@/contexts/CurrencyContext";
 
 export default function Checkout() {
-  const { storeGames, setGames } = useContext(StoreContext);
+  const { storeGames, setGames, basket } = useContext(StoreContext);
   const { selectedCurrency, exchangeRates } = useContext(CurrencyContext);
   console.log(storeGames.filter((game) => game.inBasket));
   return (
@@ -102,7 +102,11 @@ export default function Checkout() {
           </ul>
 
           <aside className="flex min-w-full flex-shrink flex-col items-center rounded-2xl bg-[#1e2131] p-8 xl:ml-[5%] xl:min-w-[360px]">
-            <OrderDetails />
+            <OrderDetails
+              basket={basket}
+              selectedCurrency={selectedCurrency}
+              exchangeRates={exchangeRates}
+            />
             <hr className="my-10 w-full border-t border-solid border-[#2f344b]" />
             <Link
               leadingIcon={

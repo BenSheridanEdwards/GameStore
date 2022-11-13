@@ -9,8 +9,8 @@ import React, {
   useState,
 } from "react";
 
-import type { Game } from "../pages/api/games";
-import { fetchGames } from "../pages/api/helper_functions/fetchGames/fetchGames";
+import type { Game } from "@/types";
+import { fetchGames } from "@/api/helper_functions/fetchGames/fetchGames";
 
 export type StoreContextValue = {
   storeGames: Game[];

@@ -2,9 +2,8 @@ import React from "react";
 import { CurrencyProvider } from "@/contexts/CurrencyContext";
 import { StoreProvider } from "@/contexts/StoreContext";
 import { Roboto } from "@next/font/google";
-import "../../styles/globals.scss";
+import "@/styles/globals.scss";
 
-// If loading a variable font, you don't need to specify the font weight
 const roboto = Roboto({ weight: "400" });
 
 export default function RootLayout({

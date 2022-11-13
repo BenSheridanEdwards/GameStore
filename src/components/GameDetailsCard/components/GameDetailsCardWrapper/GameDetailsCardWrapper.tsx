@@ -1,5 +1,5 @@
-import Image from "next/image";
 import React, { ReactElement, ReactNode } from "react";
+import Image from "next/image";
 
 interface GameDetailsCardWrapperProps {
   artworkUrl: string;

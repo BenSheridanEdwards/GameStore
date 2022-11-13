@@ -1,5 +1,5 @@
 import React, { ReactElement, Dispatch, SetStateAction } from "react";
-import { Game } from "@/api/games";
+import type { Game } from "@/types";
 import { Button } from "@/components/Button/Button";
 
 interface AddToBasketButtonProps {

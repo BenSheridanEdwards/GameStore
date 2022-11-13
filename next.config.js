@@ -11,9 +11,9 @@ module.exports = {
   sassOptions: {
     includePaths: [path.join(__dirname, "styles")],
   },
-  // compiler: {
-  //   styledComponents: true,
-  // },
+  compiler: {
+    styledComponents: true,
+  },
   images: {
     domains: [
       "is1-ssl.mzstatic.com",
