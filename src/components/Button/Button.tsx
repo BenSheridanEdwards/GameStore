@@ -1,16 +1,16 @@
-import React, { memo, ReactNode } from "react";
+import React, { ReactNode } from "react";
 import clsx from "clsx";
-import "./styles.css";
+import "./styles.scss";
 
 interface ButtonProps {
   onClick: () => void;
   variant?: "link" | "secondary" | "primary" | "icon";
   fullWidth?: boolean;
-  leadingIcon?: ReactNode;
+  leadingIcon?: any;
   children?: ReactNode;
 }
 
-export const Button = memo(function Button({
+export function Button({
   children,
   onClick,
   variant,
@@ -28,8 +28,8 @@ export const Button = memo(function Button({
 
   return (
     <button className={className} onClick={onClick} type="button">
-      {!!leadingIcon && <div className="Button__Icon">{leadingIcon}</div>}
+      {!!leadingIcon && <span className="Button__Icon">{leadingIcon}</span>}
       {!!children && <span className="Button__Text">{children}</span>}
     </button>
   );
-});
+}

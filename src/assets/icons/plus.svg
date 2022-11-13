@@ -1,6 +1,3 @@
-<svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 18 18">
-    <g fill="none" fill-rule="evenodd">
-        <path d="M0 0L0 18 18 18 18 0z"/>
-        <path fill="currentColor" fill-rule="nonzero" d="M15 9.857L9.857 9.857 9.857 15 8.143 15 8.143 9.857 3 9.857 3 8.143 8.143 8.143 8.143 3 9.857 3 9.857 8.143 15 8.143z"/>
-    </g>
+<svg width="18" height="18" viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg">
+<path d="M15 9.85714H9.85714V15H8.14286V9.85714H3V8.14286H8.14286V3H9.85714V8.14286H15V9.85714Z" fill="white"/>
 </svg>

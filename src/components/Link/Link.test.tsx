@@ -1,15 +1,11 @@
 import React from "react";
 import { render, screen } from "@testing-library/react";
-import { BrowserRouter } from "react-router-dom";
+
 import { Link } from "./Link";
 
 describe("Link", () => {
   beforeEach(() => {
-    render(
-      <BrowserRouter>
-        <Link to="/blog">Link text</Link>
-      </BrowserRouter>
-    );
+    render(<Link to="/blog">Link text</Link>);
   });
 
   it("renders without error", () => {

@@ -1,6 +1,5 @@
-import React, { memo, ReactNode } from "react";
-import { NavLink } from "react-router-dom";
-import "./Link.css";
+import React, { ReactNode } from "react";
+import NavLink from "next/link";
 
 interface LinkProps {
   onClick?: () => void;
@@ -9,16 +8,19 @@ interface LinkProps {
   children?: ReactNode;
 }
 
-export const Link = memo(function Link({
-  children,
-  onClick,
-  leadingIcon,
-  to,
-}: LinkProps) {
+export function Link({ children, onClick, leadingIcon, to }: LinkProps) {
   return (
-    <NavLink className="Link" onClick={onClick} to={to}>
-      {!!leadingIcon && <div className="Link__icon">{leadingIcon}</div>}
-      {!!children && <span className="Link__text">{children}</span>}
+    <NavLink
+      className="group flex min-h-[24px] cursor-pointer items-center bg-transparent text-sm text-[#14f0af]"
+      onClick={onClick}
+      href={to}
+    >
+      {!!leadingIcon && leadingIcon}
+      {!!children && <span className="group-hover:underline">{children}</span>}
     </NavLink>
   );
-});
+}
+
+Link.defaultProps = {
+  leadingIcon: null,
+};

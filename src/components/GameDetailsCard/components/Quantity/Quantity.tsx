@@ -4,11 +4,9 @@ import React, {
   Dispatch,
   SetStateAction,
 } from "react";
-import { ReactComponent as AddIcon } from "assets/icons/add.svg";
-import { ReactComponent as SubtractIcon } from "assets/icons/subtract.svg";
-import { Button } from "components/Button/Button";
-import { Game } from "types/types";
-import "./styles.css";
+
+import { Button } from "@/components/Button/Button";
+import { Game } from "@/api/games";
 
 interface QuantityProps {
   gameId: string;
@@ -55,16 +53,44 @@ export function Quantity({
 
   return (
     <div>
-      <h3>Quantity</h3>
-      <div className="Quantity__Controls">
+      <h3 className="text-[#13F0AF]">Quantity</h3>
+      <div className="mt-1 flex items-center text-white">
         <Button
-          leadingIcon={<SubtractIcon />}
+          leadingIcon={
+            <svg
+              width="18"
+              height="18"
+              viewBox="0 0 18 18"
+              fill="none"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <title>Subtract</title>
+              <path
+                d="M15 9.85714H9.85714H8.14286H3V8.14285H8.14286L9.85714 8.14285L15 8.14285V9.85714Z"
+                fill="white"
+              />
+            </svg>
+          }
           onClick={handleDecreaseClick}
           variant="icon"
         />
-        <div className="Quantity__Value">{quantity}</div>
+        <div className="mx-3">{quantity}</div>
         <Button
-          leadingIcon={<AddIcon />}
+          leadingIcon={
+            <svg
+              width="18"
+              height="18"
+              viewBox="0 0 18 18"
+              fill="none"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <title>Add</title>
+              <path
+                d="M15 9.85714H9.85714V15H8.14286V9.85714H3V8.14286H8.14286V3H9.85714V8.14286H15V9.85714Z"
+                fill="white"
+              />
+            </svg>
+          }
           onClick={handleIncreaseClick}
           variant="icon"
         />

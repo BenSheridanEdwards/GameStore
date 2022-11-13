@@ -1,8 +1,7 @@
 import React, { ReactElement, useMemo } from "react";
-import type { Rates } from "types/types";
+import type { Rates } from "../../../../pages/api/rates";
 import { convertCurrencyAmount } from "../../../../utils/convertCurrencyAmount/convertCurrencyAmount";
-import { formatCurrency } from "./helper_functions/formatCurrency";
-import "./styles.css";
+import { formatCurrency } from "../../../../utils/formatCurrency/formatCurrency";
 
 interface PriceProps {
   value: number;
@@ -32,7 +31,5 @@ export function Price({
     currency: selectedCurrency,
   });
 
-  return <div className="Price">{price}</div>;
+  return <h3 className="text-4xl">{price}</h3>;
 }
-
-export default Price;

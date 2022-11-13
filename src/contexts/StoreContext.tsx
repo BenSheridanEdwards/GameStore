@@ -1,3 +1,5 @@
+"use client";
+
 import React, {
   createContext,
   ReactElement,
@@ -6,8 +8,9 @@ import React, {
   useMemo,
   useState,
 } from "react";
-import type { Game } from "types/types";
-import { fetchGames } from "../api/fetchFunctions/fetchGames/fetchGames";
+
+import type { Game } from "../pages/api/games";
+import { fetchGames } from "../pages/api/helper_functions/fetchGames/fetchGames";
 
 export type StoreContextValue = {
   storeGames: Game[];
