@@ -1,5 +1,5 @@
 import React, { ReactElement } from "react";
-import getLocaleDateString from "./helper_functions/getLocaleDateString";
+import getLocaleDateString from "@/utils/getLocaleDataString/getLocaleDateString";
 
 interface ReleaseDateAndTitleProps {
   releaseDate: string;

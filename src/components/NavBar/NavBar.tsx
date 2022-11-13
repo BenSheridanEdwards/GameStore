@@ -1,8 +1,7 @@
 "use client";
 
 import React, { ChangeEvent, memo, useContext, useState } from "react";
-import { Link } from "../Link/Link";
-
+import { Link } from "@/components/Link/Link";
 import { Select } from "@/components/Select/Select";
 import CurrencyContext from "@/contexts/CurrencyContext";
 import StoreContext from "@/contexts/StoreContext";

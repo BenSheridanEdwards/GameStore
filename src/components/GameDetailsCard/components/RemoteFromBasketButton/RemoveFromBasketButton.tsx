@@ -1,6 +1,6 @@
 import React, { ReactElement, Dispatch, SetStateAction } from "react";
-import { Button } from "../../../Button/Button";
-import { Game } from "../../../../pages/api/games";
+import { Button } from "@/components/Button/Button";
+import type { Game } from "@/types";
 
 interface RemoveFromBasketButtonProps {
   gameId: string;

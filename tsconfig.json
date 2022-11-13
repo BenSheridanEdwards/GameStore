@@ -2,31 +2,16 @@
   "compilerOptions": {
     "baseUrl": ".",
     "paths": {
-      "@/components/*": [
-        "src/components/*"
-      ],
-      "@/styles/*": [
-        "styles/*"
-      ],
-      "@/contexts/*": [
-        "src/contexts/*"
-      ],
-      "@/api/*": [
-        "src/pages/api/*"
-      ],
-      "@/assets/*": [
-        "src/assets/*"
-      ],
-      "@/utils/*": [
-        "src/utils/*"
-      ]
+      "@/components/*": ["src/components/*"],
+      "@/styles/*": ["styles/*"],
+      "@/contexts/*": ["src/contexts/*"],
+      "@/api/*": ["src/pages/api/*"],
+      "@/assets/*": ["src/assets/*"],
+      "@/utils/*": ["src/utils/*"],
+      "@/types": ["src/types.d.ts"]
     },
     "target": "es6",
-    "lib": [
-      "dom",
-      "dom.iterable",
-      "esnext"
-    ],
+    "lib": ["dom", "dom.iterable", "esnext"],
     "allowJs": true,
     "skipLibCheck": true,
     "strict": false,
@@ -45,13 +30,6 @@
       }
     ]
   },
-  "include": [
-    "**/*.ts",
-    "**/*.tsx",
-    ".next/types/**/*.ts"
-  ],
-  "exclude": [
-    "node_modules",
-    ".next"
-  ]
+  "include": ["**/*.ts", "**/*.tsx", ".next/types/**/*.ts"],
+  "exclude": ["node_modules", ".next"]
 }

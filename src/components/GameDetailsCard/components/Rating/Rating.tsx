@@ -27,6 +27,7 @@ export function Rating({ value }: RatingProps): ReactElement {
               height="24"
               viewBox="0 0 24 24"
             >
+              <title>Star {ratingIndex}</title>
               <g fill="none">
                 <path d="M0 0L24 0 24 24 0 24z" />
                 <path

@@ -1,5 +1,5 @@
 import React, { ChangeEvent, ReactElement } from "react";
-import "./styles.css";
+import "./styles.scss";
 
 interface SelectProps {
   value: string;

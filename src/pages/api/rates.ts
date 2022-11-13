@@ -1,13 +1,6 @@
 // Next.js API route support: https://nextjs.org/docs/api-routes/introduction
 import type { NextApiRequest, NextApiResponse } from "next";
-
-export type Rates = {
-  USD: number;
-  GBP: number;
-  EUR: number;
-  [x: string]: number;
-};
-
+import type { Rates } from "@/types";
 
 export default function handler(
   req: NextApiRequest,

@@ -4,9 +4,8 @@ import React, {
   Dispatch,
   SetStateAction,
 } from "react";
-
 import { Button } from "@/components/Button/Button";
-import { Game } from "@/api/games";
+import type { Game } from "@/types";
 
 interface QuantityProps {
   gameId: string;
