@@ -1,7 +1,3 @@
-<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24">
-    <g fill="none" fill-rule="evenodd">
-        <rect width="24" height="24" fill="currentColor" rx="8"/>
-        <path d="M3 3L3 21 21 21 21 3z"/>
-        <path fill="#FFF" fill-rule="nonzero" d="M18 12.857L12.857 12.857 11.143 12.857 6 12.857 6 11.143 11.143 11.143 12.857 11.143 18 11.143z"/>
-    </g>
+<svg width="18" height="18" viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg">
+<path d="M15 9.85714H9.85714H8.14286H3V8.14285H8.14286L9.85714 8.14285L15 8.14285V9.85714Z" fill="white"/>
 </svg>

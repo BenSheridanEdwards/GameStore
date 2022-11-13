@@ -1,11 +1,10 @@
 import React, { ReactElement, useContext, useMemo } from "react";
-import { formatCurrency } from "components/GameDetailsCard/components/Price/helper_functions/formatCurrency";
-import CurrencyContext from "contexts/CurrencyContext";
-import StoreContext from "contexts/StoreContext";
-import { convertCurrencyAmount } from "utils/convertCurrencyAmount/convertCurrencyAmount";
-import { getTotalNumberOfItemsInBasket } from "utils/getTotalNumberOfItemsInBasket/getTotalNumberOfItemsInBasket";
+import { formatCurrency } from "@/utils/formatCurrency/formatCurrency";
+import CurrencyContext from "@/contexts/CurrencyContext";
+import StoreContext from "@/contexts/StoreContext";
+import { convertCurrencyAmount } from "@/utils/convertCurrencyAmount/convertCurrencyAmount";
+import { getTotalNumberOfItemsInBasket } from "@/utils/getTotalNumberOfItemsInBasket/getTotalNumberOfItemsInBasket";
 import { getBasketTotalAmount } from "./helper_functions/getBasketTotalAmount/getBasketTotalAmount";
-import "./style.css";
 
 export function OrderDetails(): ReactElement {
   const { basket } = useContext(StoreContext);
@@ -31,12 +30,12 @@ export function OrderDetails(): ReactElement {
   const totalNumberOfItems = getTotalNumberOfItemsInBasket(basket);
 
   return (
-    <div className="OrderDetails">
-      <div className="OrderDetails__OrderValue">
+    <div className="w-full">
+      <div className="flex justify-between text-2xl font-bold">
         <span>Order Value</span>
         <span>{totalOrderValue}</span>
       </div>
-      <div className="OrderDetails__OrderSize">
+      <div className="mt-6 flex justify-between text-2xl">
         <span>Total items</span>
         <span>{totalNumberOfItems}</span>
       </div>

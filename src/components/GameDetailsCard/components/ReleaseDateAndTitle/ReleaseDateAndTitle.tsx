@@ -1,6 +1,5 @@
 import React, { ReactElement } from "react";
 import getLocaleDateString from "./helper_functions/getLocaleDateString";
-import "./styles.css";
 
 interface ReleaseDateAndTitleProps {
   releaseDate: string;
@@ -15,8 +14,10 @@ export function ReleaseDateAndTitle({
 
   return (
     <div>
-      <h3>Released ∙ {formattedReleaseDateString}</h3>
-      <div className="Title__Text">{title}</div>
+      <h3 className="text-[#13F0AF]">
+        Released ∙ {formattedReleaseDateString}
+      </h3>
+      <p className="mt-1">{title}</p>
     </div>
   );
 }

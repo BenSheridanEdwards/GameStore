@@ -3,6 +3,7 @@ import "./styles.css";
 
 interface SelectProps {
   value: string;
+  // eslint-disable-next-line no-unused-vars
   onChange: (event: ChangeEvent) => void;
   options: {
     label: string;

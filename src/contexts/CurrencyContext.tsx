@@ -1,3 +1,5 @@
+"use client";
+
 import React, {
   createContext,
   ReactElement,
@@ -6,8 +8,8 @@ import React, {
   useMemo,
   useState,
 } from "react";
-import type { Rates } from "types/types";
-import { fetchRates } from "../api/fetchFunctions/fetchRates/fetchRates";
+import { fetchRates } from "@/api/helper_functions/fetchRates/fetchRates";
+import type { Rates } from "@/api/rates";
 
 export type CurrencyContextValue = {
   exchangeRates: Rates | null;
