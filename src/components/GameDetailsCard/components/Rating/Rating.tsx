@@ -14,7 +14,7 @@ export function Rating({ value }: RatingProps): ReactElement {
       <div className="mt-1 flex">
         {ratingScale.map((ratingIndex) => {
           const className = clsx({
-            "text-headerBg": true,
+            "text-headerBg": ratingIndex > value,
             "text-light": ratingIndex <= value,
           });
 
