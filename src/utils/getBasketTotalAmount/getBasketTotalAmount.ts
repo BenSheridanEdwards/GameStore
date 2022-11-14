@@ -1,4 +1,4 @@
-import { Game } from "types/types";
+import type { Game } from "@/types";
 
 export function getBasketTotalAmount(basket: Game[]): number {
   return basket.reduce<number>((accumulator: number, current: Game) => {
