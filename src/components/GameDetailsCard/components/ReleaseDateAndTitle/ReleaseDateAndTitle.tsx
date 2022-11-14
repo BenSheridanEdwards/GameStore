@@ -14,9 +14,7 @@ export function ReleaseDateAndTitle({
 
   return (
     <div>
-      <h3 className="text-[#13F0AF]">
-        Released ∙ {formattedReleaseDateString}
-      </h3>
+      <h3 className="text-accent">Released ∙ {formattedReleaseDateString}</h3>
       <p className="mt-1">{title}</p>
     </div>
   );

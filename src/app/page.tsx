@@ -18,7 +18,7 @@ export default function Home() {
   const { selectedCurrency, exchangeRates } = useContext(CurrencyContext);
   return (
     <>
-      <header className="fixed left-0 right-0 top-0 z-50 flex min-h-[80px] w-full items-center bg-[#101320]">
+      <header className="fixed left-0 right-0 top-0 z-50 flex min-h-[80px] w-full items-center bg-headerBg">
         <NavBar headerText="Games" />
       </header>
       <main className="mt-20 py-10 px-6">

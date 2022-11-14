@@ -11,7 +11,7 @@ interface LinkProps {
 export function Link({ children, onClick, leadingIcon, to }: LinkProps) {
   return (
     <NavLink
-      className="group flex min-h-[24px] cursor-pointer items-center bg-transparent text-sm text-[#14f0af]"
+      className="bg-transparent group flex min-h-[24px] cursor-pointer items-center text-sm text-accent"
       onClick={onClick}
       href={to}
     >

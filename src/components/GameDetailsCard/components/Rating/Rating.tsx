@@ -10,12 +10,12 @@ const ratingScale = [1, 2, 3, 4, 5];
 export function Rating({ value }: RatingProps): ReactElement {
   return (
     <div>
-      <h3 className="hidden text-[#13F0AF] lg:block">Rating</h3>
+      <h3 className="hidden text-accent lg:block">Rating</h3>
       <div className="mt-1 flex">
         {ratingScale.map((ratingIndex) => {
           const className = clsx({
-            "text-[#101320]": true,
-            "text-[#f5f5f5]": ratingIndex <= value,
+            "text-headerBg": true,
+            "text-light": ratingIndex <= value,
           });
 
           return (

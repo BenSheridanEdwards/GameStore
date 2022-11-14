@@ -52,8 +52,8 @@ export function Quantity({
 
   return (
     <div>
-      <h3 className="text-[#13F0AF]">Quantity</h3>
-      <div className="mt-1 flex items-center text-white">
+      <h3 className="text-accent">Quantity</h3>
+      <div className="mt-1 flex items-center text-light">
         <Button
           leadingIcon={
             <svg
@@ -66,7 +66,7 @@ export function Quantity({
               <title>Subtract</title>
               <path
                 d="M15 9.85714H9.85714H8.14286H3V8.14285H8.14286L9.85714 8.14285L15 8.14285V9.85714Z"
-                fill="white"
+                fill="currentColor"
               />
             </svg>
           }
@@ -86,7 +86,7 @@ export function Quantity({
               <title>Add</title>
               <path
                 d="M15 9.85714H9.85714V15H8.14286V9.85714H3V8.14286H8.14286V3H9.85714V8.14286H15V9.85714Z"
-                fill="white"
+                fill="currentColor"
               />
             </svg>
           }

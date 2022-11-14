@@ -36,7 +36,7 @@ export function OrderDetails({
   const totalNumberOfItems = getTotalNumberOfItemsInBasket(basket);
 
   return (
-    <dl className="w-full">
+    <dl className="w-full text-light">
       <div className="flex justify-between text-2xl font-bold">
         <dt>Order value</dt>
         <dd>{totalOrderValue}</dd>

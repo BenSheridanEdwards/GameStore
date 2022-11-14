@@ -18,7 +18,7 @@ export function Select({
 }: SelectProps): ReactElement {
   return (
     <select
-      className="Select cursor-pointer appearance-none rounded-lg bg-[#1e2131] py-2 pr-6 pl-4 text-white hover:bg-[#282b40]"
+      className="Select cursor-pointer appearance-none rounded-lg bg-cardBg py-2 pr-6 pl-4 text-light hover:bg-cardBgHover"
       value={value}
       onChange={onChange}
     >

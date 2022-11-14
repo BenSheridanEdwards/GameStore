@@ -21,8 +21,8 @@ export function GameDetailsCardWrapper({
       id={id}
       className={
         isMobileCard
-          ? "relative flex flex-row-reverse justify-between rounded-2xl bg-[#1e2131] text-white lg:hidden lg:h-[120px] lg:flex-row"
-          : "relative hidden flex-row-reverse justify-between rounded-2xl bg-[#1e2131] text-white lg:flex lg:h-[120px] lg:flex-row"
+          ? "relative flex flex-row-reverse justify-between rounded-2xl bg-cardBg text-light lg:hidden lg:h-[120px] lg:flex-row"
+          : "relative hidden flex-row-reverse justify-between rounded-2xl bg-cardBg text-light lg:flex lg:h-[120px] lg:flex-row"
       }
       data-testid={`GameDetailsCard-${id}`}
     >

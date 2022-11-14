@@ -20,11 +20,11 @@ export function Button({
   const className = clsx({
     "items-center rounded-md flex cursor-pointer justify-center leading-4 w-min":
       true,
-    "bg-[#3f48d8] hover:bg-[#4a55e4] text-[#f5f5f5] min-h-10 py-2 px-4 uppercase":
+    "bg-primaryBtn hover:bg-primaryBtnHover text-light min-h-10 py-2 px-4 uppercase":
       variant === "primary",
-    "bg-[#303550] hover:bg-[#3b4161] text-[#f5f5f5] min-h-10 py-2 px-4 uppercase":
+    "bg-secondaryBtn hover:bg-secondaryBtnHover text-light min-h-10 py-2 px-4 uppercase":
       variant === "secondary",
-    "bg-[#303550] hover:bg-[#3b4161] p-1": variant === "icon",
+    "bg-secondaryBtn hover:bg-secondaryBtnHover p-1": variant === "icon",
     "Button--fullWidth": fullWidth,
   });
 
