@@ -1,6 +1,6 @@
 import { Dispatch, SetStateAction } from "react";
 
-import type { Game } from "../../games";
+import type { Game } from "@/types";
 
 interface FetchGamesInterface {
   setStateFunction: Dispatch<SetStateAction<Game[]>>;
@@ -17,7 +17,7 @@ export function fetchGames({
       setStateFunction(data.games);
     })
     .catch((error) => {
-      // console.warn(error.message);
+      console.warn(error.message);
       return null;
     });
 }

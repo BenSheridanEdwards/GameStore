@@ -1,6 +1,6 @@
 import { Dispatch, SetStateAction } from "react";
 
-import type { Rates } from "../../rates";
+import type { Rates } from "@/types";
 
 interface FetchRatesInterface {
   setStateFunction: Dispatch<SetStateAction<Rates | null>>;
@@ -17,7 +17,7 @@ export function fetchRates({
       setStateFunction(data);
     })
     .catch((error) => {
-      // console.warn(error.message);
+      console.warn(error.message);
       return null;
     });
 }
