@@ -5,7 +5,8 @@ module.exports = {
     "./src/components/**/*.{js,ts,jsx,tsx}",
   ],
   darkMode: "class", // or 'media' or 'class'
-  theme: {
+  theme: {},
+  extend: {
     colors: {
       headerBg: "#101320",
       bodyBg: "#151829",
@@ -21,7 +22,6 @@ module.exports = {
       dark: "#24273A",
       accent: "#13F0AF",
     },
-    extend: {},
   },
   plugins: [],
 };
