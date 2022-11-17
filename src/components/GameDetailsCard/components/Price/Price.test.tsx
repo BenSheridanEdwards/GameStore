@@ -9,7 +9,7 @@ describe("Price", () => {
         value={100}
         selectedCurrency="USD"
         exchangeRates={{ USD: 1, GBP: 1.4, EUR: 1.2 }}
-      />
+      />,
     );
   });
 

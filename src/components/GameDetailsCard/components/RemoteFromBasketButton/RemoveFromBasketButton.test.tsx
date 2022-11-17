@@ -11,7 +11,7 @@ describe("RemoveFromBasketButton", () => {
       <RemoveFromBasketButton
         setStateCallback={mockSetGamesCallback}
         gameId="1"
-      />
+      />,
     );
   });
 

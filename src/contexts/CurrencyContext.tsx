@@ -9,7 +9,7 @@ import React, {
   useState,
 } from "react";
 import { fetchRates } from "@/api/helper_functions/fetchRates/fetchRates";
-import type { Rates } from "@/types";
+import { Rates } from "@/types";
 
 export type CurrencyContextValue = {
   exchangeRates: Rates | null;
@@ -23,7 +23,7 @@ interface CurrencyProviderProps {
 }
 
 const CurrencyContext = createContext<CurrencyContextValue>(
-  {} as CurrencyContextValue
+  {} as CurrencyContextValue,
 );
 
 export function CurrencyProvider({

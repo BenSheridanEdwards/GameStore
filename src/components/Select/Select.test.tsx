@@ -25,7 +25,7 @@ describe("Select", () => {
             value: "GBP",
           },
         ]}
-      />
+      />,
     );
   });
 

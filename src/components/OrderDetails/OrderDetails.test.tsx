@@ -35,7 +35,7 @@ describe("OrderDetails", () => {
         ]}
         exchangeRates={{ USD: 1, EUR: 0.8738967054, GBP: 0.7869876781 }}
         selectedCurrency="USD"
-      />
+      />,
     );
   });
 

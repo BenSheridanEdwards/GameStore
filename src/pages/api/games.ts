@@ -1,11 +1,8 @@
 // Next.js API route support: https://nextjs.org/docs/api-routes/introduction
-import type { NextApiRequest, NextApiResponse } from "next";
-import type { Game } from "@/types";
+import { NextApiRequest, NextApiResponse } from "next";
+import { Game } from "@/types";
 
-export default function handler(
-  req: NextApiRequest,
-  res: NextApiResponse<{ games: Game[] }>
-) {
+export default function handler(req: NextApiRequest, res: NextApiResponse<{ games: Game[] }>) {
   res.status(200).json({
     games: [
       {

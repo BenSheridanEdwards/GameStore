@@ -12,7 +12,7 @@ describe("Quantity", () => {
         quantity={2}
         gameId="1"
         setStateCallback={mockSetGamesCallback}
-      />
+      />,
     );
   });
 

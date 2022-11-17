@@ -1,5 +1,5 @@
 import React, { ReactElement, useMemo } from "react";
-import type { Rates } from "@/types";
+import { Rates } from "@/types";
 import { convertCurrencyAmount } from "@/utils/convertCurrencyAmount/convertCurrencyAmount";
 import { formatCurrency } from "@/utils/formatCurrency/formatCurrency";
 
@@ -23,7 +23,7 @@ export function Price({
             exchangeRates,
           })
         : value,
-    [exchangeRates, selectedCurrency, value]
+    [exchangeRates, selectedCurrency, value],
   );
 
   const price = formatCurrency({

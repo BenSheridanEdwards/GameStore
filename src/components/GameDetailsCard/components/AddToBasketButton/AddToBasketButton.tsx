@@ -1,5 +1,5 @@
 import React, { ReactElement, Dispatch, SetStateAction } from "react";
-import type { Game } from "@/types";
+import { Game } from "@/types";
 import { Button } from "@/components/Button/Button";
 
 interface AddToBasketButtonProps {
@@ -47,7 +47,7 @@ export function AddToBasketButton({
 
   const handleClick = () => {
     setStateCallback((games: Game[]) => {
-      return games.map((game) => {
+      return games.map(game => {
         if (game.id === gameId) {
           return {
             ...game,

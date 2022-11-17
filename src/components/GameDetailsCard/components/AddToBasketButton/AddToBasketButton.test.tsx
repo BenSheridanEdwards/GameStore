@@ -12,7 +12,7 @@ describe("AddToBasketButton", () => {
         setStateCallback={mockSetGamesCallback}
         inBasket={false}
         gameId="1"
-      />
+      />,
     );
   });
 
@@ -30,7 +30,7 @@ describe("AddToBasketButton", () => {
         setStateCallback={mockSetGamesCallback}
         inBasket
         gameId="1"
-      />
+      />,
     );
     screen.getByRole("button", { name: /Added/i });
   });

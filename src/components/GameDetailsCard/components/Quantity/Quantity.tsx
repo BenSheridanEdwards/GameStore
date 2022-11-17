@@ -5,7 +5,7 @@ import React, {
   SetStateAction,
 } from "react";
 import { Button } from "@/components/Button/Button";
-import type { Game } from "@/types";
+import { Game } from "@/types";
 
 interface QuantityProps {
   gameId: string;
@@ -21,8 +21,8 @@ export function Quantity({
   const handleDecreaseClick = useCallback(() => {
     if (quantity > 1) {
       const newQuantity = quantity - 1;
-      setStateCallback((games) => {
-        return games.map((game) => {
+      setStateCallback(games => {
+        return games.map(game => {
           if (game.id === gameId) {
             return {
               ...game,
@@ -37,8 +37,8 @@ export function Quantity({
 
   const handleIncreaseClick = useCallback(() => {
     const newQuantity = quantity + 1;
-    setStateCallback((games) => {
-      return games.map((game) => {
+    setStateCallback(games => {
+      return games.map(game => {
         if (game.id === gameId) {
           return {
             ...game,
@@ -53,7 +53,7 @@ export function Quantity({
   return (
     <div>
       <h3 className="text-accent">Quantity</h3>
-      <div className="mt-1 flex items-center text-light">
+      <div className="text-light mt-1 flex items-center">
         <Button
           leadingIcon={
             <svg

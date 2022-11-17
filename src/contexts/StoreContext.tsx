@@ -9,7 +9,7 @@ import React, {
   useState,
 } from "react";
 
-import type { Game } from "@/types";
+import { Game } from "@/types";
 import { fetchGames } from "@/api/helper_functions/fetchGames/fetchGames";
 
 export type StoreContextValue = {
@@ -44,7 +44,7 @@ export function StoreProvider({
   }, []);
 
   useEffect(() => {
-    const gamesInBasket = games.filter((game) => {
+    const gamesInBasket = games.filter(game => {
       return game.inBasket;
     });
 

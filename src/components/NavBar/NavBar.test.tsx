@@ -18,7 +18,7 @@ describe("NavBar", () => {
             }}
           />
         </CurrencyProvider>
-      </StoreProvider>
+      </StoreProvider>,
     );
   });
 

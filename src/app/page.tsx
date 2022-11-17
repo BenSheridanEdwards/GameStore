@@ -102,7 +102,7 @@ export default function Home() {
                     </GameDetailsCardWrapper>
                   </li>
                 );
-              }
+              },
             )}
         </ul>
       </main>

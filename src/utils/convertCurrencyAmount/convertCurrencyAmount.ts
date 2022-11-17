@@ -1,4 +1,4 @@
-import type { Rates } from "@/types";
+import { Rates } from "@/types";
 
 interface ConvertCurrencyAmountInterface {
   amount: number;

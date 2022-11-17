@@ -12,7 +12,7 @@ export function Rating({ value }: RatingProps): ReactElement {
     <div>
       <h3 className="hidden text-accent lg:block">Rating</h3>
       <div className="mt-1 flex">
-        {ratingScale.map((ratingIndex) => {
+        {ratingScale.map(ratingIndex => {
           const className = clsx({
             "text-headerBg": ratingIndex > value,
             "text-light": ratingIndex <= value,
