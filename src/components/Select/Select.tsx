@@ -22,7 +22,7 @@ export function Select({
       value={value}
       onChange={onChange}
     >
-      {options.map(option => (
+      {options.map((option) => (
         <option key={option.value} value={option.value}>
           {option.label}
         </option>
