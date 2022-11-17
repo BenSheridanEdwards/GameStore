@@ -1,15 +1,15 @@
 "use client";
 
-import { RemoveFromBasketButton } from "../../components/GameDetailsCard/components/RemoteFromBasketButton/RemoveFromBasketButton";
-import { OrderDetails } from "../../components/OrderDetails/OrderDetails";
+import React, { useContext } from "react";
+import { RemoveFromBasketButton } from "@/components/GameDetailsCard/components/RemoteFromBasketButton/RemoveFromBasketButton";
+import { OrderDetails } from "@/components/OrderDetails/OrderDetails";
 import StoreContext from "@/contexts/StoreContext";
-import { Link } from "../../components/Link/Link";
-import { useContext } from "react";
-import { GameDetailsCardWrapper } from "../../components/GameDetailsCard/components/GameDetailsCardWrapper/GameDetailsCardWrapper";
-import { Price } from "../../components/GameDetailsCard/components/Price/Price";
-import { Quantity } from "../../components/GameDetailsCard/components/Quantity/Quantity";
-import { ReleaseDateAndTitle } from "../../components/GameDetailsCard/components/ReleaseDateAndTitle/ReleaseDateAndTitle";
-import { NavBar } from "../../components/NavBar/NavBar";
+import { Link } from "@/components/Link/Link";
+import { GameDetailsCardWrapper } from "@/components/GameDetailsCard/components/GameDetailsCardWrapper/GameDetailsCardWrapper";
+import { Price } from "@/components/GameDetailsCard/components/Price/Price";
+import { Quantity } from "@/components/GameDetailsCard/components/Quantity/Quantity";
+import { ReleaseDateAndTitle } from "@/components/GameDetailsCard/components/ReleaseDateAndTitle/ReleaseDateAndTitle";
+import { NavBar } from "@/components/NavBar/NavBar";
 import CurrencyContext from "@/contexts/CurrencyContext";
 
 export default function Checkout() {
@@ -17,7 +17,7 @@ export default function Checkout() {
   const { selectedCurrency, exchangeRates } = useContext(CurrencyContext);
   return (
     <>
-      <header className="bg-headerBg fixed left-0 right-0 top-0 z-50 flex min-h-[80px] w-full items-center">
+      <header className="fixed left-0 right-0 top-0 z-50 flex min-h-[80px] w-full items-center bg-headerBg">
         <NavBar
           headerText="Checkout"
           backLink={{
@@ -32,7 +32,7 @@ export default function Checkout() {
             {storeGames &&
               storeGames.length > 0 &&
               storeGames
-                .filter(game => game.inBasket)
+                .filter((game) => game.inBasket)
                 .map(
                   ({ artworkUrl, releaseDate, price, title, id, quantity }) => {
                     return (
@@ -100,13 +100,13 @@ export default function Checkout() {
                 )}
           </ul>
 
-          <aside className="bg-cardBg flex min-w-full flex-shrink flex-col items-center rounded-2xl p-8 xl:ml-[5%] xl:min-w-[360px]">
+          <aside className="flex min-w-full flex-shrink flex-col items-center rounded-2xl bg-cardBg p-8 xl:ml-[5%] xl:min-w-[360px]">
             <OrderDetails
               basket={basket}
               selectedCurrency={selectedCurrency}
               exchangeRates={exchangeRates}
             />
-            <hr className="border-divider my-10 w-full border-t border-solid" />
+            <hr className="my-10 w-full border-t border-solid border-divider" />
             <Link
               leadingIcon={
                 <div className="mr-2 flex h-[18px] w-[18px] transform items-center justify-center duration-200 ease-in-out group-hover:translate-x-[-4px]">

@@ -1,6 +1,6 @@
-j{
+{
   "name": "gamestore",
-  "private": true,
+  "private": false,
   "scripts": {
     "dev": "next dev",
     "build": "next build",
@@ -20,8 +20,11 @@ j{
     ]
   },
   "dependencies": {
-    "@next/font": "^13.0.0",
+    "@next/font": "^13.0.3",
+    "@testing-library/jest-dom": "^5.16.5",
+    "@testing-library/react": "^13.4.0",
     "@testing-library/user-event": "^7.1.2",
+    "@typescript-eslint/eslint-plugin": "^5.43.0",
     "clsx": "^1.2.1",
     "eslint-plugin-simple-import-sort": "^8.0.0",
     "next-plugin-svgr": "^1.1.2",
@@ -31,8 +34,6 @@ j{
     "sass": "^1.55.0"
   },
   "devDependencies": {
-    "@testing-library/jest-dom": "^5.16.5",
-    "@testing-library/react": "^13.4.0",
     "@types/node": "^18.11.7",
     "@types/react": "^18.0.24",
     "autoprefixer": "^10.4.12",

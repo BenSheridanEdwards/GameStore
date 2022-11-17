@@ -2,7 +2,7 @@ import React, { ReactElement, useMemo } from "react";
 import { formatCurrency } from "@/utils/formatCurrency/formatCurrency";
 import { convertCurrencyAmount } from "@/utils/convertCurrencyAmount/convertCurrencyAmount";
 import { getTotalNumberOfItemsInBasket } from "@/utils/getTotalNumberOfItemsInBasket/getTotalNumberOfItemsInBasket";
-import { getBasketTotalAmount } from "../../utils/getBasketTotalAmount/getBasketTotalAmount";
+import { getBasketTotalAmount } from "@/utils/getBasketTotalAmount/getBasketTotalAmount";
 import { Game, Rates } from "@/types";
 
 interface OrderDetailsProps {
@@ -36,7 +36,7 @@ export function OrderDetails({
   const totalNumberOfItems = getTotalNumberOfItemsInBasket(basket);
 
   return (
-    <dl className="text-light w-full">
+    <dl className="w-full text-light">
       <div className="flex justify-between text-2xl font-bold">
         <dt>Order value</dt>
         <dd>{totalOrderValue}</dd>

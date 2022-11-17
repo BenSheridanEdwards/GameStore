@@ -1,6 +1,6 @@
 "use client";
 
-import React, { ChangeEvent, memo, useContext, useState } from "react";
+import React, { ChangeEvent, useContext, useState } from "react";
 import { Link } from "@/components/Link/Link";
 import { Select } from "@/components/Select/Select";
 import CurrencyContext from "@/contexts/CurrencyContext";
@@ -14,10 +14,7 @@ export interface NavBarProps {
   };
 }
 
-export const NavBar = memo(function NavBar({
-  headerText,
-  backLink,
-}: NavBarProps) {
+export function NavBar({ headerText, backLink }: NavBarProps) {
   const { setSelectedCurrency, selectedCurrency } = useContext(CurrencyContext);
   const { basket } = useContext(StoreContext);
   const [currency, setCurrency] = useState(selectedCurrency);
@@ -110,4 +107,4 @@ export const NavBar = memo(function NavBar({
       />
     </div>
   );
-});
+}
